@@ -10,9 +10,13 @@ const places = await getCollection('places');
 <Layout title="맛집맵 - 진짜 맛있는 한 끼">
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h1 class="text-xl font-bold text-orange-600 flex items-center gap-2">
+      <h1 class="text-lg lg:text-xl font-bold text-orange-600 flex items-center gap-2">
         <span>🍽️</span>
-        <a href="/">맛집맵</a>
+        <a href="/" class="flex flex-wrap items-center gap-1">
+          <span class="hidden lg:inline">거지맵의 대항마</span>
+          <span>맛집맵!</span>
+          <span class="hidden lg:inline text-sm font-normal text-gray-600">| 한번먹어도 찐 맛집만 간다</span>
+        </a>
       </h1>
       <nav class="flex gap-4">
         <a href="/" class="text-gray-600 hover:text-orange-600">지도</a>
