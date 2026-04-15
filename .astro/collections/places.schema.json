@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "number"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "korean",
+        "japanese",
+        "chinese",
+        "western",
+        "bunsik",
+        "cafe",
+        "other"
+      ]
+    },
+    "status": {
+      "default": "pending",
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "eliminated",
+        "reviewing"
+      ]
+    },
+    "menus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "price"
+        ]
+      }
+    },
+    "phone": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "reviewCount": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "address",
+    "lat",
+    "lng",
+    "category",
+    "menus",
+    "createdAt"
+  ]
+}

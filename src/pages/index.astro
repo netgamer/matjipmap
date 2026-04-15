@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Map from '../components/Map.astro';
+import PlaceCard from '../components/PlaceCard.astro';
+import { getCollection } from 'astro:content';
+
+const places = await getCollection('places');
+---
+
+<Layout title="맛집맵 - 진짜 맛있는 한 끼">
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <h1 class="text-xl font-bold text-orange-600 flex items-center gap-2">
+        <span>🍽️</span>
+        <a href="/">맛집맵</a>
+      </h1>
+      <nav class="flex gap-4">
+        <a href="/" class="text-gray-600 hover:text-orange-600">지도</a>
+        <a href="/report" class="text-gray-600 hover:text-orange-600">제보하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex flex-col lg:flex-row h-[calc(100vh-57px)]">
+    <div class="flex-1 relative">
+      <Map places={places} />
+    </div>
+    
+    <aside class="w-full lg:w-96 bg-white border-t lg:border-t-0 lg:border-l border-gray-200 overflow-y-auto">
+      <div class="p-4 border-b border-gray-200 sticky top-0 bg-white">
+        <h2 class="font-semibold text-gray-800">주변 맛집</h2>
+        <p class="text-sm text-gray-500">{places.length}개 맛집</p>
+      </div>
+      <div class="p-4 space-y-4">
+        {places.map((place) => (
+          <PlaceCard place={place} />
+        ))}
+      </div>
+    </aside>
+  </main>
+</Layout>

@@ -1,0 +1,65 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  place: CollectionEntry<'places'>;
+}
+
+const { place } = Astro.props;
+
+const statusLabels = {
+  pending: { text: '미검증', class: 'bg-yellow-100 text-yellow-800' },
+  verified: { text: '맛집', class: 'bg-red-100 text-red-800' },
+  eliminated: { text: '제외', class: 'bg-gray-100 text-gray-600' },
+  reviewing: { text: '재검증', class: 'bg-blue-100 text-blue-800' },
+};
+
+const categoryLabels = {
+  korean: '한식',
+  japanese: '일식',
+  chinese: '중식',
+  western: '양식',
+  bunsik: '분식',
+  cafe: '카페',
+  other: '기타',
+};
+
+const status = statusLabels[place.data.status];
+---
+
+<a 
+  href={`/place/${place.id}`}
+  class="block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-orange-300 transition group"
+>
+  <div class="flex justify-between items-start mb-2">
+    <h3 class="font-semibold text-gray-900 group-hover:text-orange-600">
+      {place.data.name}
+    </h3>
+    <span class={`px-2 py-0.5 rounded text-xs font-medium ${status.class}`}>
+      {status.text}
+    </span>
+  </div>
+  
+  <p class="text-sm text-gray-500 mb-2">{place.data.address}</p>
+  
+  <div class="flex items-center justify-between">
+    <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded">
+      {categoryLabels[place.data.category]}
+    </span>
+    {place.data.rating && (
+      <div class="flex items-center gap-1">
+        <span class="text-yellow-500">★</span>
+        <span class="text-sm font-medium">{place.data.rating.toFixed(1)}</span>
+        <span class="text-xs text-gray-400">({place.data.reviewCount || 0})</span>
+      </div>
+    )}
+  </div>
+  
+  {place.data.menus && place.data.menus.length > 0 && (
+    <div class="mt-3 pt-2 border-t border-gray-100">
+      <p class="text-xs text-gray-500">
+        {place.data.menus[0].name} · {place.data.menus[0].price.toLocaleString()}원
+      </p>
+    </div>
+  )}
+</a>

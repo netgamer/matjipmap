@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  places: CollectionEntry<'places'>[];
+}
+
+const { places } = Astro.props;
+---
+
+<div id="map" class="w-full h-full"></div>
+
+<script define:vars={{ places }}>
+  const map = new naver.maps.Map('map', {
+    center: new naver.maps.LatLng(37.5666805, 126.9784147),
+    zoom: 12,
+  });
+
+  const markers = [];
+  for (const place of places) {
+    const statusColors = {
+      pending: '#fbbf24',
+      verified: '#ef4444',
+      eliminated: '#9ca3af',
+      reviewing: '#3b82f6',
+    };
+    const color = statusColors[place.data.status];
+    
+    const marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(place.data.lat, place.data.lng),
+      map,
+      icon: {
+        content: `<div style="width:24px;height:24px;background:${color};border-radius:50%;border:2px solid white;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>`,
+        anchor: new naver.maps.Point(12, 12),
+      },
+    });
+
+    const infoWindow = new naver.maps.InfoWindow({
+      content: `
+        <div style="padding:12px;min-width:200px;">
+          <h3 style="font-weight:bold;margin-bottom:4px;">${place.data.name}</h3>
+          <p style="color:#666;font-size:12px;margin-bottom:8px;">${place.data.address}</p>
+          ${place.data.rating ? `<span style="color:#f59e0b;">★ ${place.data.rating.toFixed(1)}</span>` : ''}
+          <a href="/place/${place.id}" style="display:block;margin-top:8px;color:#f97316;text-decoration:none;font-size:12px;">자세히 보기 →</a>
+        </div>
+      `,
+    });
+
+    naver.maps.Event.addListener(marker, 'click', () => {
+      infoWindow.open(map, marker);
+    });
+
+    markers.push(marker);
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        map.setCenter(new naver.maps.LatLng(lat, lng));
+        map.setZoom(14);
+      },
+      () => {}
+    );
+  }
+</script>
