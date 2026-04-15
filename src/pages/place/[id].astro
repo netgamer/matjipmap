@@ -31,6 +31,7 @@ const categoryLabels = {
 
 const status = statusLabels[place.data.status];
 const category = categoryLabels[place.data.category];
+const starIcons = place.data.michelinStars ? '⭐'.repeat(place.data.michelinStars) : '';
 ---
 
 <Layout title={`${place.data.name} - 맛집맵`}>
@@ -50,8 +51,16 @@ const category = categoryLabels[place.data.category];
       <div class="p-6">
         <div class="flex items-start justify-between mb-4">
           <div>
-            <h1 class="text-2xl font-bold text-gray-900">{place.data.name}</h1>
-            <p class="text-gray-600 mt-1">{place.data.address}</p>
+            <div class="flex items-center gap-3 mb-2">
+              <h1 class="text-2xl font-bold text-gray-900">{place.data.name}</h1>
+              {starIcons && <span class="text-2xl">{starIcons}</span>}
+            </div>
+            <p class="text-gray-600">{place.data.address}</p>
+            {place.data.michelinCategory && (
+              <span class="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-yellow-100 to-orange-100 text-orange-700 rounded-full text-sm font-medium">
+                {place.data.michelinCategory}
+              </span>
+            )}
           </div>
           <span class={`px-3 py-1 rounded-full text-sm font-medium ${status.class}`}>
             {status.text}

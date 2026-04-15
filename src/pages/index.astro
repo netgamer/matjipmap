@@ -5,6 +5,12 @@ import PlaceCard from '../components/PlaceCard.astro';
 import { getCollection } from 'astro:content';
 
 const places = await getCollection('places');
+
+//星级별 데이터
+const star3 = places.filter(p => p.data.michelinStars === 3);
+const star2 = places.filter(p => p.data.michelinStars === 2);
+const star1 = places.filter(p => p.data.michelinStars === 1);
+const noStar = places.filter(p => !p.data.michelinStars);
 ---
 
 <Layout title="맛집맵 - 진짜 맛있는 한 끼">
@@ -25,7 +31,25 @@ const places = await getCollection('places');
     </div>
   </header>
 
-  <main class="flex flex-col lg:flex-row" style="height: calc(100vh - 57px);">
+  <!--星级 필터 -->
+  <div class="bg-white border-b border-gray-200 px-4 py-2 overflow-x-auto">
+    <div class="flex gap-2 min-w-max" id="star-filters">
+      <button class="filter-btn active px-3 py-1 rounded-full text-sm font-medium" data-stars="all">
+        전체 <span class="text-xs">({places.length})</span>
+      </button>
+      <button class="filter-btn px-3 py-1 rounded-full text-sm font-medium text-yellow-600 border border-yellow-400" data-stars="3">
+        ⭐⭐⭐ 3스타 <span class="text-xs">({star3.length})</span>
+      </button>
+      <button class="filter-btn px-3 py-1 rounded-full text-sm font-medium text-gray-500 border border-gray-300" data-stars="2">
+        ⭐⭐ 2스타 <span class="text-xs">({star2.length})</span>
+      </button>
+      <button class="filter-btn px-3 py-1 rounded-full text-sm font-medium text-gray-500 border border-gray-300" data-stars="1">
+        ⭐ 1스타 <span class="text-xs">({star1.length})</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="flex flex-col lg:flex-row" style="height: calc(100vh - 105px);">
     <div class="w-full lg:flex-1 h-[50vh] lg:h-full relative">
       <Map places={places} />
     </div>
@@ -33,9 +57,9 @@ const places = await getCollection('places');
     <aside class="w-full lg:w-96 bg-white border-t lg:border-t-0 lg:border-l border-gray-200 overflow-y-auto lg:h-full">
       <div class="p-4 border-b border-gray-200 sticky top-0 bg-white">
         <h2 class="font-semibold text-gray-800">주변 맛집</h2>
-        <p class="text-sm text-gray-500">{places.length}개 맛집</p>
+        <p class="text-sm text-gray-500" id="place-count">{places.length}개 맛집</p>
       </div>
-      <div class="p-4 space-y-4">
+      <div class="p-4 space-y-4" id="place-list">
         {places.map((place) => (
           <PlaceCard place={place} />
         ))}
@@ -43,3 +67,99 @@ const places = await getCollection('places');
     </aside>
   </main>
 </Layout>
+
+<script define:vars={{ places }}>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const placeList = document.getElementById('place-list');
+  const placeCount = document.getElementById('place-count');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const stars = btn.dataset.stars;
+      
+      // active 클래스 토글
+      filterBtns.forEach(b => b.classList.remove('active', 'bg-orange-100', 'text-orange-700'));
+      btn.classList.add('active', 'bg-orange-100', 'text-orange-700');
+      
+      // 필터링
+      let filtered = places;
+      if (stars !== 'all') {
+        filtered = places.filter(p => p.data.michelinStars === parseInt(stars));
+      }
+      
+      // 목록 업데이트
+      placeCount.textContent = `${filtered.length}개 맛집`;
+      placeList.innerHTML = filtered.map(place => {
+        const statusLabels = {
+          pending: { text: '미검증', class: 'bg-yellow-100 text-yellow-800' },
+          verified: { text: '맛집', class: 'bg-red-100 text-red-800' },
+          eliminated: { text: '제외', class: 'bg-gray-100 text-gray-600' },
+          reviewing: { text: '재검증', class: 'bg-blue-100 text-blue-800' },
+        };
+        const status = statusLabels[place.data.status] || statusLabels.pending;
+        
+        const categoryLabels = {
+          korean: '한식',
+          japanese: '일식',
+          chinese: '중식',
+          western: '양식',
+          bunsik: '분식',
+          cafe: '카페',
+          other: '기타',
+        };
+        
+        const starIcons = place.data.michelinStars 
+          ? '⭐'.repeat(place.data.michelinStars) 
+          : '';
+        
+        return `
+          <a href="/place/${place.id}" class="block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-orange-300 transition group">
+            <div class="flex justify-between items-start mb-2">
+              <div class="flex items-center gap-2">
+                <h3 class="font-semibold text-gray-900 group-hover:text-orange-600">
+                  ${place.data.name}
+                </h3>
+                ${starIcons ? `<span class="text-sm">${starIcons}</span>` : ''}
+              </div>
+              <span class="px-2 py-0.5 rounded text-xs font-medium ${status.class}">
+                ${status.text}
+              </span>
+            </div>
+            
+            <p class="text-sm text-gray-500 mb-2">${place.data.address}</p>
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded">
+                ${categoryLabels[place.data.category] || '기타'}
+              </span>
+              ${place.data.rating ? `
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-500">★</span>
+                  <span class="text-sm font-medium">${place.data.rating.toFixed(1)}</span>
+                  <span class="text-xs text-gray-400">(${place.data.reviewCount || 0})</span>
+                </div>
+              ` : ''}
+            </div>
+            
+            ${place.data.menus && place.data.menus.length > 0 ? `
+              <div class="mt-3 pt-2 border-t border-gray-100">
+                <p class="text-xs text-gray-500">
+                  ${place.data.menus[0].name} · ${place.data.menus[0].price.toLocaleString()}원
+                </p>
+              </div>
+            ` : ''}
+          </a>
+        `;
+      }).join('');
+    });
+  });
+</script>
+
+<style>
+  .filter-btn.active {
+    @apply bg-orange-100 text-orange-700;
+  }
+  .filter-btn:not(.active):hover {
+    @apply bg-gray-100;
+  }
+</style>

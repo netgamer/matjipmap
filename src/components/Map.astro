@@ -23,30 +23,52 @@ const { places } = Astro.props;
     });
 
     for (const place of places) {
-      const statusColors = {
-        pending: '#fbbf24',
-        verified: '#ef4444',
-        eliminated: '#9ca3af',
-        reviewing: '#3b82f6',
-      };
-      const color = statusColors[place.data.status];
+      //星级별 색상
+      let color;
+      if (place.data.michelinStars === 3) {
+        color = '#FFD700'; // 금색 - 3스타
+      } else if (place.data.michelinStars === 2) {
+        color = '#C0C0C0'; // 은색 - 2스타
+      } else if (place.data.michelinStars === 1) {
+        color = '#CD7F32'; // 동색 - 1스타
+      } else {
+        // 일반 맛집 (status 기준)
+        const statusColors = {
+          pending: '#fbbf24',
+          verified: '#ef4444',
+          eliminated: '#9ca3af',
+          reviewing: '#3b82f6',
+        };
+        color = statusColors[place.data.status] || '#fbbf24';
+      }
+      
+      const starIcons = place.data.michelinStars 
+        ? '⭐'.repeat(place.data.michelinStars) 
+        : '';
       
       const marker = new naver.maps.Marker({
         position: new naver.maps.LatLng(place.data.lat, place.data.lng),
         map,
         icon: {
-          content: `<div style="width:24px;height:24px;background:${color};border-radius:50%;border:2px solid white;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>`,
-          anchor: new naver.maps.Point(12, 12),
+          content: `<div style="position:relative;">
+            <div style="width:28px;height:28px;background:${color};border-radius:50%;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.4);"></div>
+            ${starIcons ? `<div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:10px;white-space:nowrap;">${starIcons}</div>` : ''}
+          </div>`,
+          anchor: new naver.maps.Point(14, 14),
         },
       });
 
       const infoWindow = new naver.maps.InfoWindow({
         content: `
-          <div style="padding:12px;min-width:200px;">
-            <h3 style="font-weight:bold;margin-bottom:4px;">${place.data.name}</h3>
+          <div style="padding:12px;min-width:220px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <h3 style="font-weight:bold;margin:0;font-size:16px;">${place.data.name}</h3>
+              ${starIcons ? `<span style="font-size:14px;">${starIcons}</span>` : ''}
+            </div>
             <p style="color:#666;font-size:12px;margin-bottom:8px;">${place.data.address}</p>
-            ${place.data.rating ? `<span style="color:#f59e0b;">★ ${place.data.rating.toFixed(1)}</span>` : ''}
-            <a href="/place/${place.id}" style="display:block;margin-top:8px;color:#f97316;text-decoration:none;font-size:12px;">자세히 보기 →</a>
+            ${place.data.rating ? `<span style="color:#f59e0b;font-size:14px;">★ ${place.data.rating.toFixed(1)}</span>` : ''}
+            ${place.data.michelinCategory ? `<span style="margin-left:8px;font-size:12px;color:#666;">${place.data.michelinCategory}</span>` : ''}
+            <a href="/place/${place.id}" style="display:block;margin-top:8px;color:#f97316;text-decoration:none;font-size:12px;padding:6px 12px;background:#fff7ed;border-radius:4px;text-align:center;">자세히 보기 →</a>
           </div>
         `,
       });
