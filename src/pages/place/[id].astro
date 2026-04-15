@@ -124,6 +124,11 @@ const category = categoryLabels[place.data.category];
 
 <script define:vars={{ lat: place.data.lat, lng: place.data.lng }}>
   function initPlaceMap() {
+    if (typeof naver === 'undefined') {
+      setTimeout(initPlaceMap, 100);
+      return;
+    }
+    
     const map = new naver.maps.Map('map', {
       center: new naver.maps.LatLng(lat, lng),
       zoom: 15,
@@ -133,10 +138,6 @@ const category = categoryLabels[place.data.category];
       map,
     });
   }
-
-  if (typeof naver !== 'undefined') {
-    initPlaceMap();
-  } else {
-    window.addEventListener('naverMapReady', initPlaceMap);
-  }
+  
+  initPlaceMap();
 </script>
