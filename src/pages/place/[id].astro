@@ -123,12 +123,20 @@ const category = categoryLabels[place.data.category];
 </Layout>
 
 <script define:vars={{ lat: place.data.lat, lng: place.data.lng }}>
-  const map = new naver.maps.Map('map', {
-    center: new naver.maps.LatLng(lat, lng),
-    zoom: 15,
-  });
-  new naver.maps.Marker({
-    position: new naver.maps.LatLng(lat, lng),
-    map,
-  });
+  function initPlaceMap() {
+    const map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(lat, lng),
+      zoom: 15,
+    });
+    new naver.maps.Marker({
+      position: new naver.maps.LatLng(lat, lng),
+      map,
+    });
+  }
+
+  if (typeof naver !== 'undefined') {
+    initPlaceMap();
+  } else {
+    window.addEventListener('naverMapReady', initPlaceMap);
+  }
 </script>
