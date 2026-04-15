@@ -21,12 +21,12 @@ const places = await getCollection('places');
     </div>
   </header>
 
-  <main class="flex flex-col lg:flex-row h-[calc(100vh-57px)]">
-    <div class="flex-1 relative">
+  <main class="flex flex-col lg:flex-row" style="height: calc(100vh - 57px);">
+    <div class="w-full lg:flex-1 h-[50vh] lg:h-full relative">
       <Map places={places} />
     </div>
     
-    <aside class="w-full lg:w-96 bg-white border-t lg:border-t-0 lg:border-l border-gray-200 overflow-y-auto">
+    <aside class="w-full lg:w-96 bg-white border-t lg:border-t-0 lg:border-l border-gray-200 overflow-y-auto lg:h-full">
       <div class="p-4 border-b border-gray-200 sticky top-0 bg-white">
         <h2 class="font-semibold text-gray-800">주변 맛집</h2>
         <p class="text-sm text-gray-500">{places.length}개 맛집</p>
