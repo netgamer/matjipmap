@@ -18,8 +18,10 @@ const placesCollection = defineCollection({
     description: z.string().optional(),
     rating: z.number().optional(),
     reviewCount: z.number().optional(),
-    michelinStars: z.number().optional(),
-    michelinCategory: z.string().optional(),
+    reporter: z.string().optional(),
+    reporterRegion: z.string().optional(),
+    uploadedAt: z.string().optional(),
+    visitedAt: z.string().optional(),
     createdAt: z.string(),
   }),
 });
