@@ -1,0 +1,22 @@
+---
+name: "굴토리굴요리"
+address: "경기도 고양시 일산서구 대화동 2302-1 1층"
+lat: 37.435090
+lng: 127.054026
+category: "korean"
+status: "verified"
+menus:
+  - name: "대표 메뉴"
+    price: 18990
+description: "네이버 지도에서 가져온 찐 맛집"
+rating: 4.5
+reviewCount: 11
+reporter: "네이버 유저"
+reporterRegion: "경기"
+uploadedAt: "2026-04-13"
+createdAt: "2026-04-16"
+---
+
+## 굴토리굴요리
+
+네이버 지도에서 가져온 찐 맛집입니다.
