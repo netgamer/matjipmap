@@ -1,36 +1,34 @@
 ---
 name: "고삼묵밥한식"
 address: "경기도 안성시 고삼면 가유리 194"
-lat: 37.481411
-lng: 126.665162
+lat: 37.550282
+lng: 126.714163
 category: "korean"
 status: "verified"
 menus:
-  - name: "제육볶음"
-    price: 14941
+  - name: "한식 정식"
+    price: 19148
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.9
-reviewCount: 4
-reporter: "차민혁"
+rating: 3.6
+reviewCount: 2
+reporter: "김민수"
 reporterRegion: "경기"
-reporterId: "user020"
-uploadedAt: "2026-04-28"
+reporterId: "user001"
+uploadedAt: "2026-01-18"
+ImageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user001"
-    nickname: "김민수"
-    rating: 4
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
-    date: "2026-04-08"
   - userId: "user002"
     nickname: "이서연"
     rating: 4
-    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
-    date: "2026-04-19"
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
+    date: "2026-02-13"
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
   - userId: "user003"
     nickname: "박지훈"
     rating: 5
-    content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-03-18"
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-19"
+    imageUrl: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

@@ -1,36 +1,28 @@
 ---
 name: "송돗골본점육류,고기요리"
 address: "인천광역시 연수구 동춘동 804-3"
-lat: 37.529642
-lng: 126.686762
+lat: 37.434135
+lng: 126.608559
 category: "korean"
 status: "verified"
 menus:
-  - name: "비빔밥"
-    price: 17539
+  - name: "김치찌개"
+    price: 8441
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 3.7
-reviewCount: 5
-reporter: "한소희"
+rating: 3.9
+reviewCount: 1
+reporter: "임준호"
 reporterRegion: "인천"
-reporterId: "user006"
-uploadedAt: "2026-04-12"
+reporterId: "user011"
+uploadedAt: "2026-03-26"
+ImageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user007"
-    nickname: "강동원"
+  - userId: "user012"
+    nickname: "배수현"
     rating: 5
-    content: "간이 딱 맞아요. 먹을 때마다 행복해요."
-    date: "2026-03-04"
-  - userId: "user008"
-    nickname: "윤서진"
-    rating: 5
-    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
-    date: "2026-03-09"
-  - userId: "user009"
-    nickname: "조민호"
-    rating: 5
-    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
-    date: "2026-01-19"
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-04-16"
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

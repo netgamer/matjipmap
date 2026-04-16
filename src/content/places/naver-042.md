@@ -1,36 +1,34 @@
 ---
 name: "강변손두부두부요리"
 address: "경기도 하남시 미사동 538-8"
-lat: 37.581967
-lng: 126.657656
+lat: 37.479473
+lng: 126.795713
 category: "korean"
 status: "verified"
 menus:
-  - name: "김치찌개"
-    price: 18293
+  - name: "한식 정식"
+    price: 16275
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 3.7
-reviewCount: 6
-reporter: "장서윤"
+rating: 4.7
+reviewCount: 2
+reporter: "홍석천"
 reporterRegion: "경기"
-reporterId: "user010"
-uploadedAt: "2026-04-10"
+reporterId: "user014"
+uploadedAt: "2026-03-18"
+ImageUrl: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user011"
-    nickname: "임준호"
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-18"
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
+  - userId: "user016"
+    nickname: "문우빈"
     rating: 4
-    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
-    date: "2026-04-08"
-  - userId: "user012"
-    nickname: "배수현"
-    rating: 4
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
-    date: "2026-04-09"
-  - userId: "user013"
-    nickname: "손예지"
-    rating: 4
-    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
-    date: "2026-03-12"
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-21"
+    imageUrl: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

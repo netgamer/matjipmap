@@ -1,36 +1,40 @@
 ---
 name: "마이갈비탄현본점육류,고기요리"
 address: "경기도 고양시 일산서구 일산동 2042"
-lat: 37.478704
-lng: 126.659100
+lat: 37.560699
+lng: 126.756239
 category: "korean"
 status: "verified"
 menus:
-  - name: "제육볶음"
-    price: 11273
+  - name: "김치찌개"
+    price: 15390
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 3.8
-reviewCount: 4
+rating: 4.6
+reviewCount: 5
 reporter: "장서윤"
 reporterRegion: "경기"
 reporterId: "user010"
-uploadedAt: "2026-04-19"
+uploadedAt: "2026-01-20"
+ImageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop"
 reviews:
   - userId: "user011"
     nickname: "임준호"
-    rating: 4
-    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
-    date: "2026-02-05"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
+    date: "2026-02-12"
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
   - userId: "user012"
     nickname: "배수현"
     rating: 5
-    content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-02-26"
+    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
+    date: "2026-02-15"
+    imageUrl: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=400&fit=crop"
   - userId: "user013"
     nickname: "손예지"
-    rating: 5
-    content: "간이 딱 맞아요. 먹을 때마다 행복해요."
-    date: "2026-04-09"
+    rating: 4
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-04-28"
+    imageUrl: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

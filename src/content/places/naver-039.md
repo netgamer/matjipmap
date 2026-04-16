@@ -1,36 +1,40 @@
 ---
 name: "청기와한정식한정식"
 address: "경기도 여주시 교동 83-1"
-lat: 37.550672
-lng: 126.706761
+lat: 37.503658
+lng: 126.606143
 category: "korean"
 status: "verified"
 menus:
-  - name: "한식 정식"
-    price: 16638
+  - name: "김치찌개"
+    price: 8187
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.6
-reviewCount: 6
-reporter: "나연아"
+rating: 4.9
+reviewCount: 3
+reporter: "이서연"
 reporterRegion: "경기"
-reporterId: "user019"
-uploadedAt: "2026-02-02"
+reporterId: "user002"
+uploadedAt: "2026-03-19"
+ImageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user020"
-    nickname: "차민혁"
+  - userId: "user003"
+    nickname: "박지훈"
     rating: 5
-    content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-01-27"
-  - userId: "user001"
-    nickname: "김민수"
-    rating: 5
-    content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-01-08"
-  - userId: "user002"
-    nickname: "이서연"
-    rating: 4
     content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
-    date: "2026-03-18"
+    date: "2026-03-28"
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
+  - userId: "user004"
+    nickname: "최유나"
+    rating: 4
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-02-27"
+    imageUrl: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=400&fit=crop"
+  - userId: "user005"
+    nickname: "정우석"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
+    date: "2026-01-11"
+    imageUrl: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

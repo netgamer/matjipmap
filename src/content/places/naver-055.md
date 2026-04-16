@@ -1,31 +1,28 @@
 ---
 name: "심학산도토리국수한식"
 address: "경기도 파주시 동패동 1096-4"
-lat: 37.453956
-lng: 126.697410
+lat: 37.481975
+lng: 126.787977
 category: "bunsik"
 status: "verified"
 menus:
-  - name: "김치찌개"
-    price: 11344
+  - name: "비빔밥"
+    price: 16083
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 3.5
-reviewCount: 2
-reporter: "문우빈"
+rating: 4.9
+reviewCount: 1
+reporter: "차민혁"
 reporterRegion: "경기"
-reporterId: "user016"
-uploadedAt: "2026-03-23"
+reporterId: "user020"
+uploadedAt: "2026-02-15"
+ImageUrl: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user017"
-    nickname: "황민지"
-    rating: 4
-    content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-04-24"
-  - userId: "user018"
-    nickname: "서준우"
-    rating: 4
+  - userId: "user001"
+    nickname: "김민수"
+    rating: 5
     content: "간이 딱 맞아요. 먹을 때마다 행복해요."
-    date: "2026-01-14"
+    date: "2026-03-05"
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

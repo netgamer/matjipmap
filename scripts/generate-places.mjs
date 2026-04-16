@@ -34,7 +34,7 @@ const reviewTemplates = {
   ],
   '칼국수만두': [
     '직접 굴린 면이 쫄깃해요. 해물 육수가 진해서 반찬이 필요 없어요.',
-    '바지락 Calvo이 끝내줘요. 국물에 밥 말아 먹으면 미쳐요.',
+    '바지락이 끝내줘요. 국물에 밥 말아 먹으면 미쳐요.',
     '춘천 닭칼국수 먹은 것 같아요. 면이 너무 좋아요.',
     '만두소도 푸짐하고, 국물에 파가루 들어가서 끝내줘요.',
     '겨울에 먹으러 왔는데, 뜨끈한 국물에 몸이 녹아요.',
@@ -45,7 +45,7 @@ const reviewTemplates = {
     '꽃게와 전복이 들어가서 감칠맛이 배가나요. 국물만으로 밥 한 그릇.',
     '순두부도 넣어주시고, 김이랑 밥하면 그게 그거예요.',
     '시원하고 깊은 맛이에요. 해산물 Lovers를 위한 천국.',
-    '콧나물도 신선하고, 바다냄새가 그대로예요. Locals만 아는 맛.',
+    '콩나물도 신선하고, 바다냄새가 그대로예요. Locals만 아는 맛.',
     '매운탕은 매운맛이 적당해요. 추어 특유의 구수함도 좋아요.',
   ],
   '오리': [
@@ -101,6 +101,65 @@ const menuTemplates = {
   'default': ['한식 정식', '비빔밥', '돌솥비빔밥', '김치찌개', '제육볶음'],
 };
 
+const foodImages = {
+  '백숙삼계탕': [
+    'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1569058242567-93de6f36f8eb?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=600&h=400&fit=crop',
+  ],
+  '칼국수만두': [
+    'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&h=400&fit=crop',
+  ],
+  '해물탕매운탕': [
+    'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1580959375944-0b7b2f8b3d9e?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=600&h=400&fit=crop',
+  ],
+  '오리': [
+    'https://images.unsplash.com/photo-1588359348347-9bc6cbbb689e?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=400&fit=crop',
+  ],
+  '중식': [
+    'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1616543723724-2cf5b5374b79?w=600&h=400&fit=crop',
+  ],
+  '보쌈족발': [
+    'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1551782450-17144efb9c50?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1544027994-2519d5a8b5d2?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&h=400&fit=crop',
+  ],
+  '추어탕': [
+    'https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1569058242567-93de6f36f8eb?w=600&h=400&fit=crop',
+  ],
+  'default': [
+    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
+    'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop',
+  ],
+};
+
 function getReviewType(name) {
   const lowerName = name.toLowerCase();
   if (lowerName.includes('백숙') || lowerName.includes('삼계탕')) return '백숙삼계탕';
@@ -147,19 +206,25 @@ function getRandomMenu(name) {
   return { name: menuName, price };
 }
 
-function getReviews(name, reviewCount) {
-  const reviewType = getReviewType(name);
-  const templates = reviewTemplates[reviewType];
+function getRandomImage(type, index) {
+  const images = foodImages[type] || foodImages['default'];
+  return images[index % images.length];
+}
+
+function getReviews(name, reviewCount, foodType) {
+  const templates = reviewTemplates[foodType];
   const reviews = [];
   
   for (let i = 0; i < Math.min(reviewCount, 3); i++) {
     const user = getNextUser();
+    const imageUrl = getRandomImage(foodType, i);
     reviews.push({
       userId: user.id,
       nickname: user.nickname,
       rating: Math.floor(Math.random() * 2) + 4,
       content: templates[Math.floor(Math.random() * templates.length)],
       date: getRandomDate(),
+      imageUrl: imageUrl,
     });
   }
   return reviews;
@@ -217,18 +282,21 @@ allPlaces.forEach((place, index) => {
   const id = String(index + 1).padStart(3, '0');
   const reporter = getNextUser();
   const reviewCount = Math.floor(Math.random() * 8) + 1;
-  const reviews = getReviews(place.name, reviewCount);
+  const foodType = getReviewType(place.name);
+  const reviews = getReviews(place.name, reviewCount, foodType);
   const rating = (3.5 + Math.random() * 1.5).toFixed(1);
   const region = place.address.includes('인천') ? '인천' : 
                  place.address.includes('서울') ? '서울' : '경기';
   const menu = getRandomMenu(place.name);
+  const mainImage = getRandomImage(foodType, index);
   
   const reviewsYaml = reviews.map(r => 
     `  - userId: "${r.userId}"
     nickname: "${r.nickname}"
     rating: ${r.rating}
     content: "${r.content}"
-    date: "${r.date}"`
+    date: "${r.date}"
+    imageUrl: "${r.imageUrl}"`
   ).join('\n');
   
   const content = `---
@@ -248,6 +316,7 @@ reporter: "${reporter.nickname}"
 reporterRegion: "${region}"
 reporterId: "${reporter.id}"
 uploadedAt: "${getRandomDate()}"
+ImageUrl: "${mainImage}"
 reviews:
 ${reviewsYaml}
 createdAt: "2026-04-16"
@@ -262,4 +331,4 @@ Locals만 아는 숨은 맛집이에요.
   count++;
 });
 
-console.log(`Generated ${count} place files`);
+console.log(`Generated ${count} place files with food images`);

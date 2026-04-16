@@ -1,36 +1,40 @@
 ---
 name: "유주희즉석손만두국칼국수칼국수,만두"
 address: "경기도 광주시 목현동 421-2"
-lat: 37.456424
-lng: 126.767448
+lat: 37.521216
+lng: 126.650692
 category: "bunsik"
 status: "verified"
 menus:
-  - name: "수제비"
-    price: 9871
+  - name: "칼국수"
+    price: 11532
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.4
-reviewCount: 4
-reporter: "한소희"
+rating: 4.5
+reviewCount: 8
+reporter: "손예지"
 reporterRegion: "경기"
-reporterId: "user006"
-uploadedAt: "2026-02-23"
+reporterId: "user013"
+uploadedAt: "2026-04-06"
+ImageUrl: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user007"
-    nickname: "강동원"
-    rating: 4
-    content: "만두소도 푸짐하고, 국물에 파가루 들어가서 끝내줘요."
-    date: "2026-04-20"
-  - userId: "user008"
-    nickname: "윤서진"
+  - userId: "user014"
+    nickname: "홍석천"
     rating: 5
     content: "만두소도 푸짐하고, 국물에 파가루 들어가서 끝내줘요."
-    date: "2026-03-04"
-  - userId: "user009"
-    nickname: "조민호"
-    rating: 4
-    content: "춘천 닭칼국수 먹은 것 같아요. 면이 너무 좋아요."
-    date: "2026-01-06"
+    date: "2026-02-03"
+    imageUrl: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=600&h=400&fit=crop"
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "해물 양이 푸짐해요. 한입 베어 물면 해맛이 물러요."
+    date: "2026-01-26"
+    imageUrl: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop"
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 5
+    content: "겨울에 먹으러 왔는데, 뜨끈한 국물에 몸이 녹아요."
+    date: "2026-01-11"
+    imageUrl: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

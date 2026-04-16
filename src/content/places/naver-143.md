@@ -1,36 +1,40 @@
 ---
 name: "보배반점 하월곡점중식당"
 address: "서울특별시 성북구 하월곡동 90-1695"
-lat: 37.408623
-lng: 126.687923
+lat: 37.485124
+lng: 126.671908
 category: "chinese"
 status: "verified"
 menus:
-  - name: "군만두"
-    price: 15569
+  - name: "마라탕"
+    price: 10654
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.0
-reviewCount: 5
-reporter: "장서윤"
+rating: 4.4
+reviewCount: 4
+reporter: "고한별"
 reporterRegion: "서울"
-reporterId: "user010"
-uploadedAt: "2026-01-18"
+reporterId: "user015"
+uploadedAt: "2026-04-20"
+ImageUrl: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user011"
-    nickname: "임준호"
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 4
+    content: "탕수육이 바삭해요. 달콤한 소스랑 찰떡이에요."
+    date: "2026-02-13"
+    imageUrl: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&h=400&fit=crop"
+  - userId: "user017"
+    nickname: "황민지"
+    rating: 4
+    content: "쟁반짜장이上来! 양도 푸짐하고 고명이 많아요."
+    date: "2026-02-11"
+    imageUrl: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&h=400&fit=crop"
+  - userId: "user018"
+    nickname: "서준우"
     rating: 5
     content: "짬뽕이 매운맛의 균형이 좋아요. 해장이 될 정도로 속이 편해요."
-    date: "2026-01-06"
-  - userId: "user012"
-    nickname: "배수현"
-    rating: 4
-    content: "짬뽕 국물이 끝내줘요. 면도 쫄깃하고 좋아요."
-    date: "2026-03-27"
-  - userId: "user013"
-    nickname: "손예지"
-    rating: 5
-    content: "짬뽕 국물이 끝내줘요. 면도 쫄깃하고 좋아요."
-    date: "2026-01-20"
+    date: "2026-03-24"
+    imageUrl: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 

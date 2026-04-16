@@ -1,36 +1,28 @@
 ---
 name: "우리소양평해장국본점해장국"
 address: "서울특별시 금천구 독산동 1035-1 우리소양평해장국"
-lat: 37.587167
-lng: 126.737046
+lat: 37.569238
+lng: 126.718276
 category: "korean"
 status: "verified"
 menus:
-  - name: "추어탕"
-    price: 8535
+  - name: "해물탕"
+    price: 17324
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 3.7
-reviewCount: 7
-reporter: "차민혁"
+rating: 4.1
+reviewCount: 1
+reporter: "한소희"
 reporterRegion: "서울"
-reporterId: "user020"
-uploadedAt: "2026-02-07"
+reporterId: "user006"
+uploadedAt: "2026-04-08"
+ImageUrl: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&h=400&fit=crop"
 reviews:
-  - userId: "user001"
-    nickname: "김민수"
+  - userId: "user007"
+    nickname: "강동원"
     rating: 4
-    content: "매운탕은 매운맛이 적당해요. 추어 특유의 구수함도 좋아요."
-    date: "2026-02-23"
-  - userId: "user002"
-    nickname: "이서연"
-    rating: 4
-    content: "순두부도 넣어주시고, 김이랑 밥하면 그게 그거예요."
-    date: "2026-01-17"
-  - userId: "user003"
-    nickname: "박지훈"
-    rating: 4
-    content: "순두부도 넣어주시고, 김이랑 밥하면 그게 그거예요."
-    date: "2026-04-09"
+    content: "콩나물도 신선하고, 바다냄새가 그대로예요. Locals만 아는 맛."
+    date: "2026-03-21"
+    imageUrl: "https://images.unsplash.com/photo-1559314809-0d155014e29e?w=600&h=400&fit=crop"
 createdAt: "2026-04-16"
 ---
 
