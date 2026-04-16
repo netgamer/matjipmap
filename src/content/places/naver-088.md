@@ -1,36 +1,36 @@
 ---
 name: "목향원한식"
 address: "경기도 남양주시 별내동 2335-3 목향원"
-lat: 37.481348
-lng: 126.781700
+lat: 37.599594
+lng: 126.673051
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 17428
+  - name: "비빔밥"
+    price: 13554
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.1
-reviewCount: 6
-reporter: "손예지"
+rating: 4.2
+reviewCount: 4
+reporter: "임준호"
 reporterRegion: "경기"
-reporterId: "user013"
-uploadedAt: "2026-02-11"
+reporterId: "user011"
+uploadedAt: "2026-04-23"
 reviews:
+  - userId: "user012"
+    nickname: "배수현"
+    rating: 4
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-04-18"
+  - userId: "user013"
+    nickname: "손예지"
+    rating: 5
+    content: "간이 딱 맞아요. 먹을 때마다 행복해요."
+    date: "2026-04-03"
   - userId: "user014"
     nickname: "홍석천"
-    rating: 4
-    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
-    date: "2026-02-12"
-  - userId: "user015"
-    nickname: "고한별"
-    rating: 4
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
-    date: "2026-02-06"
-  - userId: "user016"
-    nickname: "문우빈"
     rating: 5
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
-    date: "2026-01-25"
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
+    date: "2026-04-19"
 createdAt: "2026-04-16"
 ---
 

@@ -1,36 +1,36 @@
 ---
 name: "황소식당한식"
 address: "경기도 용인시 처인구 마평동 522-6 황소식당"
-lat: 37.504769
-lng: 126.622348
+lat: 37.585644
+lng: 126.697763
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 11644
+  - name: "비빔밥"
+    price: 18889
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.4
-reviewCount: 4
-reporter: "조민호"
+rating: 4.9
+reviewCount: 3
+reporter: "이서연"
 reporterRegion: "경기"
-reporterId: "user009"
-uploadedAt: "2026-01-14"
+reporterId: "user002"
+uploadedAt: "2026-01-06"
 reviews:
-  - userId: "user010"
-    nickname: "장서윤"
+  - userId: "user003"
+    nickname: "박지훈"
     rating: 5
-    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
-    date: "2026-04-07"
-  - userId: "user011"
-    nickname: "임준호"
-    rating: 5
-    content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-03-21"
-  - userId: "user012"
-    nickname: "배수현"
+    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
+    date: "2026-01-13"
+  - userId: "user004"
+    nickname: "최유나"
     rating: 5
     content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-01-11"
+    date: "2026-02-14"
+  - userId: "user005"
+    nickname: "정우석"
+    rating: 4
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-03-17"
 createdAt: "2026-04-16"
 ---
 

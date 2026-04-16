@@ -1,36 +1,36 @@
 ---
 name: "희망의숲가든한식"
 address: "경기도 이천시 부발읍 마암리 109-1 희망의숲가든"
-lat: 37.451445
-lng: 126.685976
+lat: 37.590820
+lng: 126.680543
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 10726
+  - name: "돌솥비빔밥"
+    price: 11368
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 3.6
+rating: 4.7
 reviewCount: 4
-reporter: "장서윤"
+reporter: "박지훈"
 reporterRegion: "경기"
-reporterId: "user010"
-uploadedAt: "2026-03-14"
+reporterId: "user003"
+uploadedAt: "2026-04-15"
 reviews:
-  - userId: "user011"
-    nickname: "임준호"
-    rating: 4
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
-    date: "2026-01-14"
-  - userId: "user012"
-    nickname: "배수현"
+  - userId: "user004"
+    nickname: "최유나"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-03-06"
+  - userId: "user005"
+    nickname: "정우석"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-01-15"
+  - userId: "user006"
+    nickname: "한소희"
     rating: 4
     content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
-    date: "2026-01-24"
-  - userId: "user013"
-    nickname: "손예지"
-    rating: 5
-    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
-    date: "2026-02-01"
+    date: "2026-02-07"
 createdAt: "2026-04-16"
 ---
 

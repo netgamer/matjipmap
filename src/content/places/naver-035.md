@@ -1,31 +1,31 @@
 ---
 name: "반구정나루터집해물,생선요리"
 address: "경기도 파주시 문산읍 사목리 208-2"
-lat: 37.518132
-lng: 126.732067
+lat: 37.478392
+lng: 126.730272
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 14141
+  - name: "추어탕"
+    price: 8552
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 5.0
+rating: 3.9
 reviewCount: 2
-reporter: "강동원"
+reporter: "한소희"
 reporterRegion: "경기"
-reporterId: "user007"
-uploadedAt: "2026-03-22"
+reporterId: "user006"
+uploadedAt: "2026-03-01"
 reviews:
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 5
+    content: "꽃게와 전복이 들어가서 감칠맛이 배가나요. 국물만으로 밥 한 그릇."
+    date: "2026-02-23"
   - userId: "user008"
     nickname: "윤서진"
-    rating: 4
-    content: "콩나물도 신선하고, 바다냄새 그대로예요. Locals이 좋아하는 이유."
-    date: "2026-04-09"
-  - userId: "user009"
-    nickname: "조민호"
-    rating: 4
-    content: "시원하고 깊은 맛이에요. 해산물 Lovers를 위한 천국이에요."
-    date: "2026-02-27"
+    rating: 5
+    content: "꽃게와 전복이 들어가서 감칠맛이 배가나요. 국물만으로 밥 한 그릇."
+    date: "2026-04-21"
 createdAt: "2026-04-16"
 ---
 

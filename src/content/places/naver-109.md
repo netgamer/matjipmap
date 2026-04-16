@@ -1,31 +1,36 @@
 ---
 name: "마구로야생선회"
 address: "경기도 고양시 덕양구 화정동 909-2 은하수빌딩 101, 102호"
-lat: 37.546195
-lng: 126.718916
+lat: 37.424356
+lng: 126.639260
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 22449
+  - name: "돌솥비빔밥"
+    price: 15736
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.0
-reviewCount: 2
-reporter: "한소희"
+rating: 4.8
+reviewCount: 4
+reporter: "강동원"
 reporterRegion: "경기"
-reporterId: "user006"
-uploadedAt: "2026-02-05"
+reporterId: "user007"
+uploadedAt: "2026-01-22"
 reviews:
-  - userId: "user007"
-    nickname: "강동원"
-    rating: 4
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
-    date: "2026-03-10"
   - userId: "user008"
     nickname: "윤서진"
     rating: 5
-    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
-    date: "2026-04-13"
+    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
+    date: "2026-02-19"
+  - userId: "user009"
+    nickname: "조민호"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-02-21"
+  - userId: "user010"
+    nickname: "장서윤"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-02-14"
 createdAt: "2026-04-16"
 ---
 

@@ -1,36 +1,36 @@
 ---
 name: "화덕닭갈비 양재직영점닭갈비"
 address: "서울특별시 서초구 양재동 327-7"
-lat: 37.598369
-lng: 126.766965
+lat: 37.583176
+lng: 126.745664
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 9227
+  - name: "한식 정식"
+    price: 13046
 description: "Locals만 아는 숨은 맛집이에요."
 rating: 4.6
-reviewCount: 5
-reporter: "홍석천"
+reviewCount: 3
+reporter: "문우빈"
 reporterRegion: "서울"
-reporterId: "user014"
-uploadedAt: "2026-04-15"
+reporterId: "user016"
+uploadedAt: "2026-03-21"
 reviews:
-  - userId: "user015"
-    nickname: "고한별"
-    rating: 5
-    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
-    date: "2026-04-25"
-  - userId: "user016"
-    nickname: "문우빈"
-    rating: 5
-    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
-    date: "2026-02-10"
   - userId: "user017"
     nickname: "황민지"
+    rating: 5
+    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
+    date: "2026-04-21"
+  - userId: "user018"
+    nickname: "서준우"
     rating: 4
-    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
-    date: "2026-04-22"
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-01-23"
+  - userId: "user019"
+    nickname: "나연아"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-04-15"
 createdAt: "2026-04-16"
 ---
 

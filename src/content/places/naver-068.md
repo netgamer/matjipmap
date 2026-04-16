@@ -1,36 +1,36 @@
 ---
 name: "이가덕보갈비탕갈비찜 본점육류,고기요리"
 address: "경기도 파주시 금릉동 442-8"
-lat: 37.596839
-lng: 126.760303
+lat: 37.582950
+lng: 126.644426
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 19865
+  - name: "돌솥비빔밥"
+    price: 14251
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.6
-reviewCount: 4
-reporter: "손예지"
+rating: 4.2
+reviewCount: 8
+reporter: "한소희"
 reporterRegion: "경기"
-reporterId: "user013"
-uploadedAt: "2026-04-08"
+reporterId: "user006"
+uploadedAt: "2026-04-27"
 reviews:
-  - userId: "user014"
-    nickname: "홍석천"
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 5
+    content: "간이 딱 맞아요. 먹을 때마다 행복해요."
+    date: "2026-03-16"
+  - userId: "user008"
+    nickname: "윤서진"
     rating: 4
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
-    date: "2026-03-20"
-  - userId: "user015"
-    nickname: "고한별"
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-03-02"
+  - userId: "user009"
+    nickname: "조민호"
     rating: 5
-    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
-    date: "2026-03-05"
-  - userId: "user016"
-    nickname: "문우빈"
-    rating: 5
-    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
-    date: "2026-04-20"
+    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
+    date: "2026-04-02"
 createdAt: "2026-04-16"
 ---
 

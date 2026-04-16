@@ -1,36 +1,36 @@
 ---
 name: "수빈식당한식"
 address: "서울특별시 광진구 자양동 679-34"
-lat: 37.491058
-lng: 126.602691
+lat: 37.418250
+lng: 126.652631
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 14109
+  - name: "제육볶음"
+    price: 17804
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.8
+rating: 4.2
 reviewCount: 3
-reporter: "이서연"
+reporter: "최유나"
 reporterRegion: "서울"
-reporterId: "user002"
-uploadedAt: "2026-03-25"
+reporterId: "user004"
+uploadedAt: "2026-02-07"
 reviews:
-  - userId: "user003"
-    nickname: "박지훈"
-    rating: 4
-    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
-    date: "2026-03-06"
-  - userId: "user004"
-    nickname: "최유나"
-    rating: 5
-    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
-    date: "2026-03-12"
   - userId: "user005"
     nickname: "정우석"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-01-21"
+  - userId: "user006"
+    nickname: "한소희"
     rating: 4
     content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
-    date: "2026-01-11"
+    date: "2026-03-20"
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-01-18"
 createdAt: "2026-04-16"
 ---
 

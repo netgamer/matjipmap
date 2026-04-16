@@ -1,36 +1,36 @@
 ---
 name: "소이연남 스타필드고양점태국음식"
 address: "경기도 고양시 덕양구 동산동 370 1F"
-lat: 37.509928
-lng: 126.742428
+lat: 37.482250
+lng: 126.791313
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 14002
+  - name: "돌솥비빔밥"
+    price: 17227
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.9
-reviewCount: 8
-reporter: "최유나"
+rating: 4.0
+reviewCount: 5
+reporter: "한소희"
 reporterRegion: "경기"
-reporterId: "user004"
-uploadedAt: "2026-04-05"
+reporterId: "user006"
+uploadedAt: "2026-02-09"
 reviews:
-  - userId: "user005"
-    nickname: "정우석"
-    rating: 4
-    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
-    date: "2026-01-15"
-  - userId: "user006"
-    nickname: "한소희"
-    rating: 4
-    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
-    date: "2026-01-04"
   - userId: "user007"
     nickname: "강동원"
     rating: 4
-    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
-    date: "2026-03-03"
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-27"
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 4
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-12"
+  - userId: "user009"
+    nickname: "조민호"
+    rating: 5
+    content: "간이 딱 맞아요. 먹을 때마다 행복해요."
+    date: "2026-01-05"
 createdAt: "2026-04-16"
 ---
 

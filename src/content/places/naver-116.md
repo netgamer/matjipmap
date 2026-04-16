@@ -1,26 +1,36 @@
 ---
 name: "서글렁탕돼지고기구이"
 address: "서울특별시 영등포구 여의도동 53 우정빌딩"
-lat: 37.406905
-lng: 126.744482
+lat: 37.489182
+lng: 126.651824
 category: "korean"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 10588
+  - name: "비빔밥"
+    price: 8638
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.5
-reviewCount: 1
-reporter: "임준호"
+rating: 4.3
+reviewCount: 5
+reporter: "홍석천"
 reporterRegion: "서울"
-reporterId: "user011"
-uploadedAt: "2026-03-28"
+reporterId: "user014"
+uploadedAt: "2026-01-25"
 reviews:
-  - userId: "user012"
-    nickname: "배수현"
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店."
+    date: "2026-03-04"
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 5
+    content: "직접 만들어주는 메뉴라서 정이 느껴져요."
+    date: "2026-03-28"
+  - userId: "user017"
+    nickname: "황민지"
     rating: 4
-    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
-    date: "2026-01-19"
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-04-21"
 createdAt: "2026-04-16"
 ---
 

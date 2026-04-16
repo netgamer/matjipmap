@@ -1,26 +1,36 @@
 ---
 name: "소호정 본점국수"
 address: "서울특별시 서초구 양재동 392-11 소호정본관"
-lat: 37.409367
-lng: 126.606772
-category: "korean"
+lat: 37.492062
+lng: 126.651352
+category: "bunsik"
 status: "verified"
 menus:
-  - name: "대표 메뉴"
-    price: 18977
+  - name: "돌솥비빔밥"
+    price: 11162
 description: "Locals만 아는 숨은 맛집이에요."
-rating: 4.8
-reviewCount: 1
-reporter: "정우석"
+rating: 4.5
+reviewCount: 8
+reporter: "장서윤"
 reporterRegion: "서울"
-reporterId: "user005"
-uploadedAt: "2026-04-04"
+reporterId: "user010"
+uploadedAt: "2026-01-01"
 reviews:
-  - userId: "user006"
-    nickname: "한소희"
+  - userId: "user011"
+    nickname: "임준호"
+    rating: 4
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-02-02"
+  - userId: "user012"
+    nickname: "배수현"
     rating: 4
     content: "주변 Locals들이 다 알고 있는 명소예요."
-    date: "2026-02-11"
+    date: "2026-04-25"
+  - userId: "user013"
+    nickname: "손예지"
+    rating: 5
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-01-25"
 createdAt: "2026-04-16"
 ---
 
