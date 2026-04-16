@@ -1,22 +1,39 @@
 ---
-name: "모박사부대찌개 시화2점찌개,전골"
-address: "경기도 시흥시 정왕동 1852-1"
-lat: 37.409240
-lng: 127.060978
-category: "korean"
+name: "이진상회베이커리"
+address: "경기도 이천시 마장면 장암리 325"
+lat: 37.505907
+lng: 126.731020
+category: "cafe"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 11904
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.0
-reviewCount: 12
-reporter: "네이버 유저"
+    price: 8156
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.8
+reviewCount: 6
+reporter: "손예지"
 reporterRegion: "경기"
-uploadedAt: "2026-02-13"
+reporterId: "user013"
+uploadedAt: "2026-04-19"
+reviews:
+  - userId: "user014"
+    nickname: "홍석천"
+    rating: 4
+    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
+    date: "2026-01-20"
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-04-13"
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 4
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-02-27"
 createdAt: "2026-04-16"
 ---
 
-## 모박사부대찌개 시화2점찌개,전골
+## 이진상회베이커리
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

@@ -1,22 +1,39 @@
 ---
-name: "오실장강남면옥 탄현점냉면"
-address: "경기도 고양시 일산서구 탄현동 1500-12"
-lat: 37.386921
-lng: 127.126412
+name: "동래파전전,빈대떡"
+address: "경기도 성남시 수정구 신흥동 3853"
+lat: 37.426850
+lng: 126.737325
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 21704
-description: "네이버 지도에서 가져온 찐 맛집"
+    price: 18802
+description: "Locals만 아는 숨은 맛집이에요."
 rating: 4.8
-reviewCount: 12
-reporter: "네이버 유저"
+reviewCount: 5
+reporter: "이서연"
 reporterRegion: "경기"
-uploadedAt: "2026-03-31"
+reporterId: "user002"
+uploadedAt: "2026-04-13"
+reviews:
+  - userId: "user003"
+    nickname: "박지훈"
+    rating: 4
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-02-27"
+  - userId: "user004"
+    nickname: "최유나"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-04-23"
+  - userId: "user005"
+    nickname: "정우석"
+    rating: 4
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-04-22"
 createdAt: "2026-04-16"
 ---
 
-## 오실장강남면옥 탄현점냉면
+## 동래파전전,빈대떡
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

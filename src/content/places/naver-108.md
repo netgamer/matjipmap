@@ -1,22 +1,39 @@
 ---
-name: "마구로야생선회"
-address: "경기도 고양시 덕양구 화정동 909-2 은하수빌딩 101, 102호"
-lat: 37.412997
-lng: 127.075090
+name: "먹쇠"
+address: "경기도 고양시 일산서구 주엽동 19"
+lat: 37.542656
+lng: 126.647208
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 21183
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.4
-reviewCount: 4
-reporter: "네이버 유저"
+    price: 18607
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.5
+reviewCount: 5
+reporter: "이서연"
 reporterRegion: "경기"
-uploadedAt: "2026-03-30"
+reporterId: "user002"
+uploadedAt: "2026-02-05"
+reviews:
+  - userId: "user003"
+    nickname: "박지훈"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-04-12"
+  - userId: "user004"
+    nickname: "최유나"
+    rating: 5
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-01-06"
+  - userId: "user005"
+    nickname: "정우석"
+    rating: 5
+    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
+    date: "2026-01-11"
 createdAt: "2026-04-16"
 ---
 
-## 마구로야생선회
+## 먹쇠
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

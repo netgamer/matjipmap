@@ -1,22 +1,39 @@
 ---
-name: "소이연남 스타필드고양점태국음식"
-address: "경기도 고양시 덕양구 동산동 370 1F"
-lat: 37.444936
-lng: 127.122977
+name: "양촌리민물장어 김포본점장어,먹장어요리"
+address: "경기도 김포시 양촌읍 양곡리 122-1"
+lat: 37.445014
+lng: 126.729743
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 12181
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 5.0
-reviewCount: 13
-reporter: "네이버 유저"
+    price: 16750
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.4
+reviewCount: 5
+reporter: "차민혁"
 reporterRegion: "경기"
-uploadedAt: "2026-03-09"
+reporterId: "user020"
+uploadedAt: "2026-04-13"
+reviews:
+  - userId: "user001"
+    nickname: "김민수"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-02-19"
+  - userId: "user002"
+    nickname: "이서연"
+    rating: 4
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-04-07"
+  - userId: "user003"
+    nickname: "박지훈"
+    rating: 4
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-02-02"
 createdAt: "2026-04-16"
 ---
 
-## 소이연남 스타필드고양점태국음식
+## 양촌리민물장어 김포본점장어,먹장어요리
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

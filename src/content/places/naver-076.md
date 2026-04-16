@@ -1,22 +1,39 @@
 ---
-name: "송담추어탕 본점추어탕"
-address: "경기도 수원시 권선구 구운동 476-7"
-lat: 37.362701
-lng: 127.083619
+name: "청담추어정추어탕"
+address: "경기도 고양시 일산서구 덕이동 309-92"
+lat: 37.546551
+lng: 126.681148
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 8173
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.9
-reviewCount: 15
-reporter: "네이버 유저"
+    price: 14638
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.8
+reviewCount: 5
+reporter: "정우석"
 reporterRegion: "경기"
-uploadedAt: "2026-02-23"
+reporterId: "user005"
+uploadedAt: "2026-02-16"
+reviews:
+  - userId: "user006"
+    nickname: "한소희"
+    rating: 4
+    content: "순두부가 들어가 있어서 부드러워요. 국물이 끝내줘요."
+    date: "2026-03-07"
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 5
+    content: "고추장 양이 푸짐해서 매운탕을 좋아하는 저한테 딱이에요."
+    date: "2026-01-06"
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 4
+    content: "이 근처 Locals만 아는 숨은 맛집이에요. 비 오는 날 딱이에요."
+    date: "2026-02-07"
 createdAt: "2026-04-16"
 ---
 
-## 송담추어탕 본점추어탕
+## 청담추어정추어탕
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

@@ -1,22 +1,39 @@
 ---
-name: "온정손만두 본점만두"
-address: "경기도 이천시 안흥동 305-2 온정빌딩 1층"
-lat: 37.413371
-lng: 127.094287
-category: "bunsik"
+name: "팔선생중식당"
+address: "경기도 용인시 기흥구 보정동 1204-3"
+lat: 37.462700
+lng: 126.621876
+category: "chinese"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 17947
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.1
-reviewCount: 9
-reporter: "네이버 유저"
+    price: 14471
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.3
+reviewCount: 10
+reporter: "한소희"
 reporterRegion: "경기"
-uploadedAt: "2026-02-24"
+reporterId: "user006"
+uploadedAt: "2026-01-21"
+reviews:
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 4
+    content: "짬뽕이 아니라 탕면이라고 해야하나... 내 취향에 딱이에요."
+    date: "2026-03-26"
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 4
+    content: "짬뽕이 매운맛의 균형이 좋아요. 해장이 될 정도로 속이 편해요."
+    date: "2026-01-01"
+  - userId: "user009"
+    nickname: "조민호"
+    rating: 4
+    content: "짬뽕이 아니라 탕면이라고 해야하나... 내 취향에 딱이에요."
+    date: "2026-02-04"
 createdAt: "2026-04-16"
 ---
 
-## 온정손만두 본점만두
+## 팔선생중식당
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

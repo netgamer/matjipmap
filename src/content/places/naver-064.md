@@ -1,22 +1,39 @@
 ---
-name: "자반고등어한식"
-address: "경기도 시흥시 정왕동 1859-20"
-lat: 37.398764
-lng: 127.121932
+name: "모박사부대찌개 시화2점찌개,전골"
+address: "경기도 시흥시 정왕동 1852-1"
+lat: 37.559975
+lng: 126.670174
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 23868
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.9
-reviewCount: 7
-reporter: "네이버 유저"
+    price: 17515
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.8
+reviewCount: 4
+reporter: "황민지"
 reporterRegion: "경기"
-uploadedAt: "2026-03-19"
+reporterId: "user017"
+uploadedAt: "2026-04-01"
+reviews:
+  - userId: "user018"
+    nickname: "서준우"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-02-05"
+  - userId: "user019"
+    nickname: "나연아"
+    rating: 5
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-04-13"
+  - userId: "user020"
+    nickname: "차민혁"
+    rating: 5
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-01-09"
 createdAt: "2026-04-16"
 ---
 
-## 자반고등어한식
+## 모박사부대찌개 시화2점찌개,전골
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

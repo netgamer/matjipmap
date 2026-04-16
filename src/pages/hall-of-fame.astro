@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return [{ params: {} }];
+}
+
+const places = await getCollection('places');
+
+const now = new Date();
+const currentYear = now.getFullYear();
+const currentMonth = now.getMonth() + 1;
+
+const rankedPlaces = places.map(place => {
+  const reviewCount = place.data.reviewCount || 0;
+  const rating = place.data.rating || 0;
+  const score = (reviewCount * 10) + (rating * 5);
+  
+  const uploadedDate = new Date(place.data.uploadedAt || place.data.createdAt);
+  const isNew = uploadedDate.getFullYear() === currentYear && 
+                uploadedDate.getMonth() + 1 === currentMonth;
+  
+  const thisMonthReviews = place.data.reviews?.filter((r: any) => {
+    const reviewDate = new Date(r.date);
+    return reviewDate.getFullYear() === currentYear && 
+           reviewDate.getMonth() + 1 === currentMonth;
+  }) || [];
+  
+  return {
+    ...place.data,
+    id: place.id,
+    score,
+    isNew,
+    thisMonthReviews: thisMonthReviews.length,
+    uploadedAt: place.data.uploadedAt || place.data.createdAt,
+  };
+});
+
+const sortedPlaces = rankedPlaces
+  .filter(p => p.thisMonthReviews > 0 || p.score > 0)
+  .sort((a, b) => b.score - a.score);
+
+const lastMonthRank: { [key: string]: number } = {};
+sortedPlaces.forEach((place, index) => {
+  const savedRank = typeof window !== 'undefined' 
+    ? localStorage.getItem(`rank_${place.id}`) 
+    : null;
+  if (savedRank) {
+    lastMonthRank[place.id] = parseInt(savedRank);
+  }
+});
+
+const topPlaces = sortedPlaces.slice(0, 50);
+
+const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+const currentMonthName = monthNames[currentMonth - 1];
+
+const categoryLabels = {
+  korean: '한식',
+  japanese: '일식',
+  chinese: '중식',
+  western: '양식',
+  bunsik: '분식',
+  cafe: '카페',
+  other: '기타',
+};
+---
+
+<Layout title={`${currentMonthName} 명예의 전당 - 맛집맵`}>
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-orange-600 flex items-center gap-2">
+        <span>🍽️</span>
+        맛집맵
+      </a>
+      <nav class="flex items-center gap-4">
+        <a href="/" class="text-gray-600 hover:text-orange-600">맛집 목록</a>
+        <a href="/hall-of-fame" class="text-orange-600 font-medium">명예의 전당</a>
+        <a href="/report" class="text-gray-600 hover:text-orange-600">제보하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-6">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white px-6 py-3 rounded-full mb-4">
+        <h1 class="text-2xl font-bold">{currentMonthName} 명예의 전당</h1>
+      </div>
+      <p class="text-gray-600">이번 달 가장 많은 사랑을 받은 찐 맛집을 확인하세요!</p>
+      <p class="text-sm text-gray-400 mt-2">매월 1일 00시에 초기화됩니다</p>
+    </div>
+
+    <div class="grid gap-4">
+      {topPlaces.map((place, index) => {
+        const currentRank = index + 1;
+        const crownIndex = currentRank - 1;
+        const crownClass = crownIndex === 0 ? 'text-yellow-500' : crownIndex === 1 ? 'text-gray-400' : crownIndex === 2 ? 'text-amber-600' : '';
+        const crownText = currentRank === 1 ? '1위' : currentRank === 2 ? '2위' : currentRank === 3 ? '3위' : null;
+        
+        return (
+          <a 
+            href={`/place/${place.id}`} 
+            class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition block"
+            data-place-id={place.id}
+            data-current-rank={currentRank}
+          >
+            <div class="flex items-center p-4">
+              <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full mr-4 flex-shrink-0">
+                {place.isNew ? (
+                  <span class="text-sm font-bold text-orange-600">NEW</span>
+                ) : crownText ? (
+                  <span class={`text-lg font-bold ${crownClass}`}>{crownText}</span>
+                ) : (
+                  <span class="text-xl font-bold text-gray-600">#{currentRank}</span>
+                )}
+              </div>
+              
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1">
+                  <h3 class="font-bold text-gray-900 truncate">{place.name}</h3>
+                  <span class="px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs">
+                    {categoryLabels[place.category as keyof typeof categoryLabels] || '기타'}
+                  </span>
+                  {place.isNew && (
+                    <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs">
+                      신규
+                    </span>
+                  )}
+                </div>
+                <p class="text-sm text-gray-500 truncate">{place.address}</p>
+                <div class="flex items-center gap-3 mt-1 text-sm">
+                  <span class="text-gray-500">추천: <a href={`/user/${place.reporterId}`} class="hover:text-orange-600">{place.reporter}</a></span>
+                  <span class="text-gray-300">|</span>
+                  <span class="text-gray-500">이번 달 리뷰 {place.thisMonthReviews}개</span>
+                </div>
+              </div>
+              
+              <div class="text-right ml-4 flex-shrink-0">
+                <div class="flex items-center gap-1 justify-end">
+                  <span class="text-yellow-500">★</span>
+                  <span class="font-bold text-gray-900">{Number(place.rating).toFixed(1)}</span>
+                </div>
+                <div class="text-xs text-gray-400 mt-1">
+                  점수: {place.score}
+                </div>
+                <div class="text-sm font-bold mt-1" data-rank-change>
+                  {place.isNew ? (
+                    <span class="text-green-600">신규 등록</span>
+                  ) : (
+                    <span class="text-gray-400">-</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    {topPlaces.length === 0 && (
+      <div class="text-center py-12 text-gray-500">
+        <p class="text-4xl mb-4">-</p>
+        <p>이번 달 순위가 아직 없습니다.</p>
+        <p class="text-sm mt-2">맛집을 추천하고 리뷰를 남겨보세요!</p>
+      </div>
+    )}
+
+    <div class="mt-8 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6">
+      <h2 class="font-bold text-gray-800 mb-4">순위 산정 기준</h2>
+      <ul class="text-sm text-gray-600 space-y-2">
+        <li>* <strong>리뷰 수 x 10점</strong> + <strong>별점 x 5점</strong> = 총 점수</li>
+        <li>* 이번 달 작성된 리뷰만 순위에 반영됩니다</li>
+        <li>* <span class="text-green-600 font-medium">신규</span> 태그는 이번 달 처음 등록된 맛집입니다</li>
+        <li>* 순위는 <span class="text-red-500">빨강</span> 상승 / <span class="text-blue-500">파랑</span> 하락으로 표시됩니다</li>
+        <li>* 매월 1일 00시에 모든 순위가 초기화됩니다</li>
+      </ul>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const STORAGE_KEY = 'matjipmap_ranks';
+  const currentMonth = new Date().toISOString().slice(0, 7);
+  
+  interface RankData {
+    month: string;
+    ranks: { [placeId: string]: number };
+  }
+  
+  function saveRanks() {
+    const places = document.querySelectorAll('[data-place-id]');
+    const ranks: { [placeId: string]: number } = {};
+    
+    places.forEach((place, index) => {
+      const placeId = place.getAttribute('data-place-id');
+      if (placeId) {
+        ranks[placeId] = index + 1;
+      }
+    });
+    
+    const data: RankData = {
+      month: currentMonth,
+      ranks
+    };
+    
+    const existing = localStorage.getItem(STORAGE_KEY);
+    const allData = existing ? JSON.parse(existing) : {};
+    allData[currentMonth] = ranks;
+    
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(allData));
+  }
+  
+  function loadPreviousRanks(): { [placeId: string]: number } {
+    const existing = localStorage.getItem(STORAGE_KEY);
+    if (!existing) return {};
+    
+    const allData = JSON.parse(existing);
+    const months = Object.keys(allData).sort().reverse();
+    
+    for (const month of months) {
+      if (month !== currentMonth) {
+        return allData[month];
+      }
+    }
+    
+    return {};
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const previousRanks = loadPreviousRanks();
+    
+    document.querySelectorAll('[data-place-id]').forEach((el) => {
+      const placeId = el.getAttribute('data-place-id');
+      if (placeId && previousRanks[placeId]) {
+        const rankEl = el.querySelector('[data-rank-change]');
+        if (rankEl) {
+          const currentRank = parseInt(el.getAttribute('data-current-rank') || '0');
+          const prevRank = previousRanks[placeId];
+          const change = prevRank - currentRank;
+          
+          if (change > 0) {
+            rankEl.innerHTML = `<span class="text-red-500">↑ ${change} 상승</span>`;
+          } else if (change < 0) {
+            rankEl.innerHTML = `<span class="text-blue-500">↓ ${Math.abs(change)} 하락</span>`;
+          }
+        }
+      }
+    });
+    
+    setTimeout(saveRanks, 1000);
+  });
+</script>

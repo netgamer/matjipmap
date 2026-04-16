@@ -1,22 +1,39 @@
 ---
-name: "학마루닭요리"
-address: "경기도 용인시 처인구 역북동 551-9"
-lat: 37.427990
-lng: 127.068783
+name: "대송버섯집찌개,전골"
+address: "경기도 이천시 백사면 모전리 9-6"
+lat: 37.564897
+lng: 126.608877
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 14176
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.2
-reviewCount: 3
-reporter: "네이버 유저"
+    price: 9318
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.5
+reviewCount: 8
+reporter: "고한별"
 reporterRegion: "경기"
-uploadedAt: "2026-03-27"
+reporterId: "user015"
+uploadedAt: "2026-03-03"
+reviews:
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 4
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-02-10"
+  - userId: "user017"
+    nickname: "황민지"
+    rating: 5
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-02-13"
+  - userId: "user018"
+    nickname: "서준우"
+    rating: 4
+    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
+    date: "2026-02-19"
 createdAt: "2026-04-16"
 ---
 
-## 학마루닭요리
+## 대송버섯집찌개,전골
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

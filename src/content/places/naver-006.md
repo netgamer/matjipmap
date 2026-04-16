@@ -1,22 +1,29 @@
 ---
-name: "송도막창구이연수본점곱창,막창,양"
-address: "인천광역시 연수구 연수동 613-7 송도막창구이"
-lat: 37.499205
-lng: 126.711473
-category: "korean"
+name: "용화반점중식당"
+address: "인천광역시 중구 경동 4-10"
+lat: 37.457688
+lng: 126.607567
+category: "chinese"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 13262
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.2
-reviewCount: 3
-reporter: "네이버 유저"
+    price: 19203
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.5
+reviewCount: 1
+reporter: "고한별"
 reporterRegion: "인천"
-uploadedAt: "2026-03-25"
+reporterId: "user015"
+uploadedAt: "2026-01-03"
+reviews:
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 5
+    content: "짬뽕이 매운맛의 균형이 좋아요. 해장이 될 정도로 속이 편해요."
+    date: "2026-01-01"
 createdAt: "2026-04-16"
 ---
 
-## 송도막창구이연수본점곱창,막창,양
+## 용화반점중식당
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

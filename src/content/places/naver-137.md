@@ -1,22 +1,29 @@
 ---
-name: "울타리곱창곱창,막창,양"
-address: "서울특별시 중랑구 중화동 298-21 1층"
-lat: 37.531769
-lng: 126.997199
+name: "멸치국수국수"
+address: "서울특별시 은평구 응암동 89-46 2층"
+lat: 37.588805
+lng: 126.795641
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 15529
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.1
-reviewCount: 10
-reporter: "네이버 유저"
+    price: 21925
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.9
+reviewCount: 1
+reporter: "조민호"
 reporterRegion: "서울"
-uploadedAt: "2026-02-06"
+reporterId: "user009"
+uploadedAt: "2026-03-24"
+reviews:
+  - userId: "user010"
+    nickname: "장서윤"
+    rating: 4
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-01-26"
 createdAt: "2026-04-16"
 ---
 
-## 울타리곱창곱창,막창,양
+## 멸치국수국수
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

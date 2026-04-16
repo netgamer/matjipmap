@@ -1,22 +1,34 @@
 ---
-name: "인덕원원시쪽갈비 본관육류,고기요리"
-address: "경기도 안양시 동안구 관양동 1490-4 인덕원원시쪽갈비"
-lat: 37.404895
-lng: 127.088960
+name: "팔당냉면 용인시청점냉면"
+address: "경기도 용인시 처인구 삼가동 254-4"
+lat: 37.488380
+lng: 126.698538
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 15763
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.1
-reviewCount: 9
-reporter: "네이버 유저"
+    price: 19201
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.3
+reviewCount: 2
+reporter: "홍석천"
 reporterRegion: "경기"
-uploadedAt: "2026-03-03"
+reporterId: "user014"
+uploadedAt: "2026-01-08"
+reviews:
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-02-17"
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-04-08"
 createdAt: "2026-04-16"
 ---
 
-## 인덕원원시쪽갈비 본관육류,고기요리
+## 팔당냉면 용인시청점냉면
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

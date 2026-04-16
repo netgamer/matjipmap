@@ -1,22 +1,29 @@
 ---
-name: "호수집닭요리"
-address: "서울특별시 중구 중림동 61-4"
-lat: 37.517471
-lng: 126.958156
+name: "3일한우국밥국밥"
+address: "서울특별시 영등포구 영등포동4가 68-5"
+lat: 37.407836
+lng: 126.623100
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 10470
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.0
-reviewCount: 7
-reporter: "네이버 유저"
+    price: 17816
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.4
+reviewCount: 1
+reporter: "강동원"
 reporterRegion: "서울"
-uploadedAt: "2026-04-12"
+reporterId: "user007"
+uploadedAt: "2026-04-20"
+reviews:
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 5
+    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
+    date: "2026-03-07"
 createdAt: "2026-04-16"
 ---
 
-## 호수집닭요리
+## 3일한우국밥국밥
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

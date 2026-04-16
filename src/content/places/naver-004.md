@@ -1,22 +1,29 @@
 ---
-name: "다복집요리주점"
-address: "인천광역시 중구 신포동 12-28"
-lat: 37.478814
-lng: 126.673850
+name: "시굴집백숙,삼계탕"
+address: "인천광역시 서구 검암동 253-1 시굴집"
+lat: 37.440371
+lng: 126.636429
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 9196
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.4
-reviewCount: 4
-reporter: "네이버 유저"
+    price: 18414
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.6
+reviewCount: 1
+reporter: "장서윤"
 reporterRegion: "인천"
-uploadedAt: "2026-01-27"
+reporterId: "user010"
+uploadedAt: "2026-04-15"
+reviews:
+  - userId: "user011"
+    nickname: "임준호"
+    rating: 4
+    content: "정통 삼계탕의 맛이에요. 인삼 넣어서 더 맛있게 먹었어요."
+    date: "2026-01-22"
 createdAt: "2026-04-16"
 ---
 
-## 다복집요리주점
+## 시굴집백숙,삼계탕
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

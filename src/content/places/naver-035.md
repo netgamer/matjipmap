@@ -1,22 +1,34 @@
 ---
-name: "도가네오리요리"
-address: "경기도 파주시 조리읍 등원리 291-1"
-lat: 37.442511
-lng: 127.132651
+name: "반구정나루터집해물,생선요리"
+address: "경기도 파주시 문산읍 사목리 208-2"
+lat: 37.518132
+lng: 126.732067
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 10197
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.4
-reviewCount: 7
-reporter: "네이버 유저"
+    price: 14141
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 5.0
+reviewCount: 2
+reporter: "강동원"
 reporterRegion: "경기"
-uploadedAt: "2026-02-11"
+reporterId: "user007"
+uploadedAt: "2026-03-22"
+reviews:
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 4
+    content: "콩나물도 신선하고, 바다냄새 그대로예요. Locals이 좋아하는 이유."
+    date: "2026-04-09"
+  - userId: "user009"
+    nickname: "조민호"
+    rating: 4
+    content: "시원하고 깊은 맛이에요. 해산물 Lovers를 위한 천국이에요."
+    date: "2026-02-27"
 createdAt: "2026-04-16"
 ---
 
-## 도가네오리요리
+## 반구정나루터집해물,생선요리
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

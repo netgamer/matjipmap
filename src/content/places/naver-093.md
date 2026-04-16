@@ -1,22 +1,39 @@
 ---
-name: "내조삼계탕 부천점백숙,삼계탕"
-address: "경기도 부천시 원미구 중동 1158-6 2층"
-lat: 37.364137
-lng: 127.127010
+name: "굴토리굴요리"
+address: "경기도 고양시 일산서구 대화동 2302-1 1층"
+lat: 37.578867
+lng: 126.761905
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 9259
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.5
-reviewCount: 1
-reporter: "네이버 유저"
+    price: 13435
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.5
+reviewCount: 6
+reporter: "배수현"
 reporterRegion: "경기"
-uploadedAt: "2026-03-28"
+reporterId: "user012"
+uploadedAt: "2026-02-07"
+reviews:
+  - userId: "user013"
+    nickname: "손예지"
+    rating: 5
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-04"
+  - userId: "user014"
+    nickname: "홍석천"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-03-21"
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 4
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-03-02"
 createdAt: "2026-04-16"
 ---
 
-## 내조삼계탕 부천점백숙,삼계탕
+## 굴토리굴요리
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

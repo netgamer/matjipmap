@@ -1,22 +1,29 @@
 ---
-name: "꽃피는산골요리주점"
-address: "서울특별시 종로구 인사동 232"
-lat: 37.517829
-lng: 126.991227
+name: "소호정 본점국수"
+address: "서울특별시 서초구 양재동 392-11 소호정본관"
+lat: 37.409367
+lng: 126.606772
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 19038
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.7
-reviewCount: 10
-reporter: "네이버 유저"
+    price: 18977
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.8
+reviewCount: 1
+reporter: "정우석"
 reporterRegion: "서울"
-uploadedAt: "2026-02-07"
+reporterId: "user005"
+uploadedAt: "2026-04-04"
+reviews:
+  - userId: "user006"
+    nickname: "한소희"
+    rating: 4
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-02-11"
 createdAt: "2026-04-16"
 ---
 
-## 꽃피는산골요리주점
+## 소호정 본점국수
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

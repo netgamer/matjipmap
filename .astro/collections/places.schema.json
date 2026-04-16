@@ -66,8 +66,59 @@
     "reviewCount": {
       "type": "number"
     },
+    "reporter": {
+      "type": "string"
+    },
+    "reporterId": {
+      "type": "string"
+    },
+    "reporterRegion": {
+      "type": "string"
+    },
+    "uploadedAt": {
+      "type": "string"
+    },
+    "visitedAt": {
+      "type": "string"
+    },
     "createdAt": {
       "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "content": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "nickname",
+          "rating",
+          "content",
+          "date"
+        ]
+      }
     },
     "$schema": {
       "type": "string"

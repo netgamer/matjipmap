@@ -1,22 +1,39 @@
 ---
-name: "돼지집돼지고기구이"
-address: "경기도 광명시 소하동 1369-2 1, 2층 돼지집"
-lat: 37.393976
-lng: 127.114608
+name: "지리산어탕국수국수"
+address: "경기도 고양시 덕양구 행주내동 104-4"
+lat: 37.424607
+lng: 126.699077
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 26492
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.7
-reviewCount: 5
-reporter: "네이버 유저"
+    price: 16736
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 5.0
+reviewCount: 3
+reporter: "손예지"
 reporterRegion: "경기"
-uploadedAt: "2026-02-25"
+reporterId: "user013"
+uploadedAt: "2026-04-22"
+reviews:
+  - userId: "user014"
+    nickname: "홍석천"
+    rating: 4
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-03-19"
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-02-24"
+  - userId: "user016"
+    nickname: "문우빈"
+    rating: 5
+    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
+    date: "2026-02-27"
 createdAt: "2026-04-16"
 ---
 
-## 돼지집돼지고기구이
+## 지리산어탕국수국수
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

@@ -1,22 +1,39 @@
 ---
-name: "신간짬뽕 본점중식당"
-address: "경기도 파주시 금촌동 776-16 1층 신간짬뽕 금촌점"
-lat: 37.439247
-lng: 127.132690
-category: "chinese"
+name: "인덕원원시쪽갈비 본관육류,고기요리"
+address: "경기도 안양시 동안구 관양동 1490-4 인덕원원시쪽갈비"
+lat: 37.506524
+lng: 126.695403
+category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 21060
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.6
-reviewCount: 7
-reporter: "네이버 유저"
+    price: 19440
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.6
+reviewCount: 4
+reporter: "황민지"
 reporterRegion: "경기"
-uploadedAt: "2026-04-06"
+reporterId: "user017"
+uploadedAt: "2026-01-26"
+reviews:
+  - userId: "user018"
+    nickname: "서준우"
+    rating: 4
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-02-26"
+  - userId: "user019"
+    nickname: "나연아"
+    rating: 5
+    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
+    date: "2026-04-23"
+  - userId: "user020"
+    nickname: "차민혁"
+    rating: 4
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-01-23"
 createdAt: "2026-04-16"
 ---
 
-## 신간짬뽕 본점중식당
+## 인덕원원시쪽갈비 본관육류,고기요리
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

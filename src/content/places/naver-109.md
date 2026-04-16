@@ -1,22 +1,34 @@
 ---
-name: "아리랑면옥 본점"
-address: "경기도 고양시 일산서구 덕이동 322-1"
-lat: 37.394815
-lng: 127.050312
+name: "마구로야생선회"
+address: "경기도 고양시 덕양구 화정동 909-2 은하수빌딩 101, 102호"
+lat: 37.546195
+lng: 126.718916
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 11692
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.4
-reviewCount: 8
-reporter: "네이버 유저"
+    price: 22449
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.0
+reviewCount: 2
+reporter: "한소희"
 reporterRegion: "경기"
-uploadedAt: "2026-02-06"
+reporterId: "user006"
+uploadedAt: "2026-02-05"
+reviews:
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 4
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-03-10"
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-04-13"
 createdAt: "2026-04-16"
 ---
 
-## 아리랑면옥 본점
+## 마구로야생선회
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

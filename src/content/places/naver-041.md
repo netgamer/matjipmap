@@ -1,22 +1,39 @@
 ---
-name: "강변손두부두부요리"
-address: "경기도 하남시 미사동 538-8"
-lat: 37.401470
-lng: 127.146919
+name: "현정이네해물예식장매운탕,해물탕"
+address: "경기도 하남시 신장동 451-19"
+lat: 37.414129
+lng: 126.770453
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 18011
-description: "네이버 지도에서 가져온 찐 맛집"
+    price: 10121
+description: "Locals만 아는 숨은 맛집이에요."
 rating: 4.1
-reviewCount: 13
-reporter: "네이버 유저"
+reviewCount: 6
+reporter: "조민호"
 reporterRegion: "경기"
-uploadedAt: "2026-01-20"
+reporterId: "user009"
+uploadedAt: "2026-02-23"
+reviews:
+  - userId: "user010"
+    nickname: "장서윤"
+    rating: 4
+    content: "시원하고 깊은 맛이에요. 해산물 Lovers를 위한 천국이에요."
+    date: "2026-02-08"
+  - userId: "user011"
+    nickname: "임준호"
+    rating: 5
+    content: "붉지 않고 맑은 해물탕인데, 내장에 좋아서 그냥 좋아요."
+    date: "2026-01-04"
+  - userId: "user012"
+    nickname: "배수현"
+    rating: 4
+    content: "시원하고 깊은 맛이에요. 해산물 Lovers를 위한 천국이에요."
+    date: "2026-02-24"
 createdAt: "2026-04-16"
 ---
 
-## 강변손두부두부요리
+## 현정이네해물예식장매운탕,해물탕
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

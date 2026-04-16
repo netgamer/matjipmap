@@ -1,22 +1,29 @@
 ---
-name: "일등추어탕 선릉 본점추어탕"
-address: "서울특별시 강남구 역삼동 683-26 선릉빌딩 1층"
-lat: 37.546458
-lng: 127.021177
-category: "korean"
+name: "갓포 쿠마카세일식당"
+address: "서울특별시 양천구 목동 406-76 1층"
+lat: 37.562371
+lng: 126.795478
+category: "japanese"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 13737
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.4
-reviewCount: 7
-reporter: "네이버 유저"
+    price: 15334
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.9
+reviewCount: 1
+reporter: "김민수"
 reporterRegion: "서울"
-uploadedAt: "2026-02-19"
+reporterId: "user001"
+uploadedAt: "2026-04-23"
+reviews:
+  - userId: "user002"
+    nickname: "이서연"
+    rating: 4
+    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
+    date: "2026-01-02"
 createdAt: "2026-04-16"
 ---
 
-## 일등추어탕 선릉 본점추어탕
+## 갓포 쿠마카세일식당
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

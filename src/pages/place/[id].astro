@@ -23,6 +23,24 @@ const categoryLabels = {
 };
 
 const category = categoryLabels[place.data.category];
+
+function getFoodImage(category: string, id: string, index: number = 0): string {
+  const categoryImages: { [key: string]: string } = {
+    korean: 'koreanfood',
+    japanese: 'sushi',
+    chinese: 'chinesefood',
+    western: 'pizza',
+    bunsik: 'ramen',
+    cafe: 'coffee',
+    other: 'food',
+  };
+  const keyword = categoryImages[category] || 'food';
+  const seed = parseInt(id.replace(/\D/g, '').slice(-4) || '1') + index;
+  return `https://loremflickr.com/600/400/${keyword}?lock=${seed}`;
+}
+
+const mainImage = place.data.imageUrl || getFoodImage(place.data.category, place.id, 0);
+const galleryImages = [1, 2, 3].map((_, i) => getFoodImage(place.data.category, place.id, i + 1));
 ---
 
 <Layout title={`${place.data.name} - 맛집맵`}>
@@ -32,7 +50,11 @@ const category = categoryLabels[place.data.category];
         <span>🍽️</span>
         맛집맵
       </a>
-      <a href="/" class="text-gray-600 hover:text-orange-600">← 맛집 목록</a>
+      <nav class="flex gap-4">
+        <a href="/" class="text-gray-600 hover:text-orange-600">맛집 목록</a>
+        <a href="/hall-of-fame" class="text-gray-600 hover:text-orange-600">명예의 전당</a>
+        <a href="/register" class="text-gray-600 hover:text-orange-600">맛집 등록</a>
+      </nav>
     </div>
   </header>
 
@@ -40,21 +62,50 @@ const category = categoryLabels[place.data.category];
     <div class="bg-white rounded-xl shadow-sm overflow-hidden">
       <div id="map" class="w-full h-64"></div>
       
+      <div class="p-4">
+        <div class="grid grid-cols-4 gap-2">
+          <div class="col-span-2 row-span-2">
+            <img 
+              src={mainImage} 
+              alt={place.data.name}
+              class="w-full h-full object-cover rounded-lg"
+              loading="eager"
+            />
+          </div>
+          {galleryImages.map((img, i) => (
+            <div>
+              <img 
+                src={img} 
+                alt={`${place.data.name} ${i + 2}`}
+                class="w-full h-full object-cover rounded-lg"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      
       <div class="p-6">
         <div class="flex items-start justify-between mb-4">
           <div>
             <div class="flex items-center gap-3 mb-2">
-              <h1 class="text-2xl font-bold text-gray-900">{place.data.name}</h1>
-              <span class="px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-red-500 text-white">
-                🏆 찐맛집
-              </span>
+              <h1 class={`text-2xl font-bold ${place.data.status === 'eliminated' ? 'text-gray-500 line-through' : 'text-gray-900'}`}>{place.data.name}</h1>
+              {place.data.status === 'eliminated' ? (
+                <span class="px-3 py-1 rounded-full text-sm font-medium bg-gray-200 text-gray-500">
+                  탈락
+                </span>
+              ) : (
+                <span class="px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r from-orange-500 to-red-500 text-white">
+                  찐맛집
+                </span>
+              )}
             </div>
             <p class="text-gray-600">{place.data.address}</p>
           </div>
         </div>
 
-        {place.data.reporter && (
-          <div class="bg-orange-50 rounded-lg p-4 mb-6">
+        {place.data.reporter && place.data.reporterId && (
+          <a href={`/user/${place.data.reporterId}`} class="block bg-orange-50 rounded-lg p-4 mb-6 hover:bg-orange-100 transition">
             <p class="text-sm text-gray-600 mb-1">추천인</p>
             <div class="flex items-center gap-2">
               <span class="text-lg">👤</span>
@@ -68,7 +119,7 @@ const category = categoryLabels[place.data.category];
                 마지막 방문: {place.data.visitedAt}
               </p>
             )}
-          </div>
+          </a>
         )}
 
         <div class="flex items-center gap-4 mb-6">
@@ -77,12 +128,21 @@ const category = categoryLabels[place.data.category];
           </span>
           {place.data.rating && (
             <div class="flex items-center gap-1">
-              <span class="text-yellow-500">★</span>
-              <span class="font-semibold">{place.data.rating.toFixed(1)}</span>
+              <span class={place.data.rating < 3 ? 'text-gray-400' : 'text-yellow-500'}>★</span>
+              <span class={`font-semibold ${place.data.rating < 3 ? 'text-gray-400' : ''}`}>{place.data.rating.toFixed(1)}</span>
               <span class="text-gray-500">({place.data.reviewCount || 0}명)</span>
             </div>
           )}
         </div>
+
+        {place.data.status === 'eliminated' && (
+          <div class="bg-gray-100 border border-gray-300 rounded-lg p-4 mb-6">
+            <p class="text-gray-600 text-center">
+              이 맛집은 평균 별점이 낮아 탈락했습니다.<br/>
+              <span class="text-sm">리뷰를 남기면 다시 순위에 올릴 수 있습니다!</span>
+            </p>
+          </div>
+        )}
 
         {place.data.description && (
           <section class="mb-6">
@@ -90,6 +150,41 @@ const category = categoryLabels[place.data.category];
             <p class="text-gray-600 bg-gray-50 rounded-lg p-4 italic">
               "{place.data.description}"
             </p>
+          </section>
+        )}
+
+        {place.data.reviews && place.data.reviews.length > 0 && (
+          <section class="mb-6">
+            <h2 class="font-semibold text-gray-800 mb-3">📝 찐 리뷰 ({place.data.reviews.length}개)</h2>
+            <div class="space-y-4">
+              {place.data.reviews.map((review: any, index: number) => (
+                <div class="bg-gray-50 rounded-lg p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <a href={`/user/${review.userId}`} class="flex items-center gap-2 hover:text-orange-600">
+                      <span class="font-semibold text-gray-900">{review.nickname}</span>
+                      <span class="text-xs text-gray-500">@{review.userId}</span>
+                    </a>
+                    <span class="text-xs text-gray-500">{review.date}</span>
+                  </div>
+                  <div class="flex items-center gap-1 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <span class={`text-lg ${i < review.rating ? 'text-yellow-500' : 'text-gray-300'}`}>★</span>
+                    ))}
+                  </div>
+                  {review.imageUrl && (
+                    <div class="mb-2">
+                      <img 
+                        src={review.imageUrl} 
+                        alt="리뷰 사진"
+                        class="w-32 h-32 object-cover rounded-lg"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <p class="text-gray-700">{review.content}</p>
+                </div>
+              ))}
+            </div>
           </section>
         )}
 

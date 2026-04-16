@@ -1,22 +1,34 @@
 ---
-name: "멸치국수국수"
-address: "서울특별시 은평구 응암동 89-46 2층"
-lat: 37.522666
-lng: 126.962888
-category: "bunsik"
+name: "수원식당한식"
+address: "서울특별시 금천구 시흥동 884-3 1층"
+lat: 37.534877
+lng: 126.736009
+category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 23567
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.7
-reviewCount: 10
-reporter: "네이버 유저"
+    price: 19914
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.5
+reviewCount: 2
+reporter: "한소희"
 reporterRegion: "서울"
-uploadedAt: "2026-04-09"
+reporterId: "user006"
+uploadedAt: "2026-04-08"
+reviews:
+  - userId: "user007"
+    nickname: "강동원"
+    rating: 5
+    content: "가성비 갑이에요. 양도 푸짐하고 맛도 좋아요."
+    date: "2026-02-18"
+  - userId: "user008"
+    nickname: "윤서진"
+    rating: 4
+    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
+    date: "2026-03-18"
 createdAt: "2026-04-16"
 ---
 
-## 멸치국수국수
+## 수원식당한식
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

@@ -1,22 +1,34 @@
 ---
-name: "풍경돌판구이 성남본점오리요리"
-address: "경기도 성남시 수정구 태평동 7272-4"
-lat: 37.369970
-lng: 127.111612
-category: "korean"
+name: "행복초밥초밥,롤"
+address: "경기도 고양시 일산서구 덕이동 527-4 1층 행복초밥"
+lat: 37.495772
+lng: 126.683489
+category: "japanese"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 13068
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.2
-reviewCount: 12
-reporter: "네이버 유저"
+    price: 11777
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.0
+reviewCount: 2
+reporter: "김민수"
 reporterRegion: "경기"
-uploadedAt: "2026-02-19"
+reporterId: "user001"
+uploadedAt: "2026-01-10"
+reviews:
+  - userId: "user002"
+    nickname: "이서연"
+    rating: 5
+    content: "Locals만 아는 숨은 맛집이에요. 다시 방문 확정!"
+    date: "2026-04-28"
+  - userId: "user003"
+    nickname: "박지훈"
+    rating: 4
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-01-19"
 createdAt: "2026-04-16"
 ---
 
-## 풍경돌판구이 성남본점오리요리
+## 행복초밥초밥,롤
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

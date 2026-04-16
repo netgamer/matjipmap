@@ -1,22 +1,39 @@
 ---
-name: "장수감자탕감자탕"
-address: "서울특별시 성북구 길음동 489-58 장수감자탕"
-lat: 37.538175
-lng: 126.944648
+name: "낙성곱창곱창,막창,양"
+address: "서울특별시 동작구 사당동 1003-18"
+lat: 37.435013
+lng: 126.769039
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 15657
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.8
-reviewCount: 15
-reporter: "네이버 유저"
+    price: 11133
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.5
+reviewCount: 8
+reporter: "장서윤"
 reporterRegion: "서울"
-uploadedAt: "2026-03-09"
+reporterId: "user010"
+uploadedAt: "2026-01-09"
+reviews:
+  - userId: "user011"
+    nickname: "임준호"
+    rating: 5
+    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
+    date: "2026-03-06"
+  - userId: "user012"
+    nickname: "배수현"
+    rating: 5
+    content: "야식으로도, 점심으로도 최고예요. 재방문 의향 있어요!"
+    date: "2026-04-22"
+  - userId: "user013"
+    nickname: "손예지"
+    rating: 4
+    content: "간이 딱 맞아서 먹을 때마다 행복해요. 강추해요!"
+    date: "2026-03-02"
 createdAt: "2026-04-16"
 ---
 
-## 장수감자탕감자탕
+## 낙성곱창곱창,막창,양
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

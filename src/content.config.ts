@@ -19,10 +19,20 @@ const placesCollection = defineCollection({
     rating: z.number().optional(),
     reviewCount: z.number().optional(),
     reporter: z.string().optional(),
+    reporterId: z.string().optional(),
     reporterRegion: z.string().optional(),
     uploadedAt: z.string().optional(),
     visitedAt: z.string().optional(),
     createdAt: z.string(),
+    imageUrl: z.string().optional(),
+    reviews: z.array(z.object({
+      userId: z.string(),
+      nickname: z.string(),
+      rating: z.number(),
+      content: z.string(),
+      date: z.string(),
+      imageUrl: z.string().optional(),
+    })).optional(),
   }),
 });
 

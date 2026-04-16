@@ -1,22 +1,29 @@
 ---
-name: "스시윤 라페점"
-address: "경기도 고양시 일산동구 장항동 735"
-lat: 37.427627
-lng: 127.144347
-category: "japanese"
+name: "다랑치마을한식"
+address: "경기도 부천시 원미구 중동 1137-5"
+lat: 37.407008
+lng: 126.748424
+category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 25620
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.6
-reviewCount: 3
-reporter: "네이버 유저"
+    price: 13055
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.9
+reviewCount: 1
+reporter: "홍석천"
 reporterRegion: "경기"
-uploadedAt: "2026-02-01"
+reporterId: "user014"
+uploadedAt: "2026-02-12"
+reviews:
+  - userId: "user015"
+    nickname: "고한별"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-04-15"
 createdAt: "2026-04-16"
 ---
 
-## 스시윤 라페점
+## 다랑치마을한식
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

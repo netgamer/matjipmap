@@ -1,22 +1,29 @@
 ---
-name: "황해해물칼국수1호점칼국수,만두"
-address: "인천광역시 중구 덕교동 128-15"
-lat: 37.478176
-lng: 126.742803
+name: "오구당당 부평본점쌈밥"
+address: "인천광역시 부평구 부평동 546-98"
+lat: 37.596262
+lng: 126.607490
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 14084
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.3
-reviewCount: 7
-reporter: "네이버 유저"
+    price: 15545
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 3.9
+reviewCount: 1
+reporter: "최유나"
 reporterRegion: "인천"
-uploadedAt: "2026-04-05"
+reporterId: "user004"
+uploadedAt: "2026-02-26"
+reviews:
+  - userId: "user005"
+    nickname: "정우석"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-01-09"
 createdAt: "2026-04-16"
 ---
 
-## 황해해물칼국수1호점칼국수,만두
+## 오구당당 부평본점쌈밥
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

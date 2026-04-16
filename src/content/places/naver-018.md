@@ -1,22 +1,39 @@
 ---
-name: "한울능이버섯백숙백숙,삼계탕"
-address: "인천광역시 서구 청라동 123-3 1층 한울능이버섯백숙"
-lat: 37.445659
-lng: 126.658044
+name: "오서방연탄석쇠구이육류,고기요리"
+address: "인천광역시 연수구 연수동 620-11"
+lat: 37.400714
+lng: 126.718562
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 15633
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.9
-reviewCount: 13
-reporter: "네이버 유저"
+    price: 10362
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.8
+reviewCount: 9
+reporter: "김민수"
 reporterRegion: "인천"
-uploadedAt: "2026-01-16"
+reporterId: "user001"
+uploadedAt: "2026-02-17"
+reviews:
+  - userId: "user002"
+    nickname: "이서연"
+    rating: 4
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-01-10"
+  - userId: "user003"
+    nickname: "박지훈"
+    rating: 5
+    content: "가격 대비 맛이 훌륭해요. 자주 오게 되는店이에요."
+    date: "2026-03-23"
+  - userId: "user004"
+    nickname: "최유나"
+    rating: 4
+    content: "직접 만들어주는 메뉴라서 그런지 정이 느껴져요."
+    date: "2026-02-25"
 createdAt: "2026-04-16"
 ---
 
-## 한울능이버섯백숙백숙,삼계탕
+## 오서방연탄석쇠구이육류,고기요리
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

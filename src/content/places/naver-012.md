@@ -1,22 +1,39 @@
 ---
-name: "검암뒷고기숯불꼼장어육류,고기요리"
-address: "인천광역시 서구 검암동 597-1 다복빌딩"
-lat: 37.499785
-lng: 126.725783
+name: "강릉해변메밀막국수 인천검단점막국수"
+address: "인천광역시 서구 당하동 1114-6"
+lat: 37.510916
+lng: 126.664615
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 18800
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.5
+    price: 17551
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.2
 reviewCount: 6
-reporter: "네이버 유저"
+reporter: "황민지"
 reporterRegion: "인천"
-uploadedAt: "2026-03-21"
+reporterId: "user017"
+uploadedAt: "2026-04-25"
+reviews:
+  - userId: "user018"
+    nickname: "서준우"
+    rating: 4
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-04-20"
+  - userId: "user019"
+    nickname: "나연아"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-02-15"
+  - userId: "user020"
+    nickname: "차민혁"
+    rating: 5
+    content: "주변 Locals들이 다 알고 있는 명소예요."
+    date: "2026-03-18"
 createdAt: "2026-04-16"
 ---
 
-## 검암뒷고기숯불꼼장어육류,고기요리
+## 강릉해변메밀막국수 인천검단점막국수
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.

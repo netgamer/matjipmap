@@ -1,22 +1,29 @@
 ---
-name: "문어스토리해천 본점해물,생선요리"
-address: "경기도 화성시 반월동 110-10 1층2층 전체"
-lat: 37.418108
-lng: 127.144111
+name: "내조삼계탕 부천점백숙,삼계탕"
+address: "경기도 부천시 원미구 중동 1158-6 2층"
+lat: 37.461164
+lng: 126.765408
 category: "korean"
 status: "verified"
 menus:
   - name: "대표 메뉴"
-    price: 14961
-description: "네이버 지도에서 가져온 찐 맛집"
-rating: 4.5
-reviewCount: 3
-reporter: "네이버 유저"
+    price: 8407
+description: "Locals만 아는 숨은 맛집이에요."
+rating: 4.8
+reviewCount: 1
+reporter: "문우빈"
 reporterRegion: "경기"
-uploadedAt: "2026-02-23"
+reporterId: "user016"
+uploadedAt: "2026-04-06"
+reviews:
+  - userId: "user017"
+    nickname: "황민지"
+    rating: 4
+    content: "약초 향이 진하게 우러나는 백숙이 끝내줍니다. 삼계탕보다 더 깊고 깊은 맛이에요."
+    date: "2026-03-02"
 createdAt: "2026-04-16"
 ---
 
-## 문어스토리해천 본점해물,생선요리
+## 내조삼계탕 부천점백숙,삼계탕
 
-네이버 지도에서 가져온 찐 맛집입니다.
+Locals만 아는 숨은 맛집이에요.
