@@ -3,10 +3,16 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = '맛집맵 - 거지맵 대항마! 진짜 맛있는 한 끼를 위한 집단지성 맛집 지도. 거지맵 싫으신 분들께 추천하는 대체 서비스입니다.' } = Astro.props;
+const { 
+  title, 
+  description = '맛집맵 - 거지맵 대항마! 진짜 맛있는 한 끼를 위한 집단지성 맛집 지도. 거지맵 싫으신 분들께 추천하는 대체 서비스입니다.',
+  ogImage = '/og-image.png'
+} = Astro.props;
 const siteUrl = 'https://matjipmap.com';
+const fullTitle = title.includes('맛집맵') ? title : `${title} | 맛집맵`;
 ---
 
 <!doctype html>
@@ -14,43 +20,71 @@ const siteUrl = 'https://matjipmap.com';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="맛집맵" />
-    <meta name="keywords" content="맛집맵, 거지맵, 거지맵 사이트, 거지맵com, 거지맵 어플, 거지맵 닷컴, 거지맵 링크, 거지맵 다운, 거지맵 주소, 거지맵 지도, 부산 거지맵, 맛집, 맛집추천, 맛집지도, 한국맛집, 서울맛집, 부산맛집, 맛집앱, 맛집검색, 맛집APP, 맛집リンク, 맛집사이트, 맛집홈페이지, 맛집검색어, 맛집app" />
+    <meta name="copyright" content="맛집맵" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="맛집맵, 거지맵, 거지맵 사이트, 거지맵com, 거지맵 어플, 거지맵 닷컴, 거지맵 링크, 거지맵 다운, 거지맵 주소, 거지맵 지도, 부산 거지맵, 맛집, 맛집추천, 맛집지도, 한국맛집, 서울맛집, 부산맛집, 맛집앱, 맛집검색, 맛집APP, 맛집リンク, 맛집사이트, 맛집홈페이지, 맛집검색어, 맛집app, 로컬맛집, 찐맛집, 진짜맛집, 로컬맛집추천" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f97316" />
+    <meta name="naver-site-verification" content="네이버 웹마스터 도구 인증 코드" />
     
     <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/rss+xml" title="맛집맵 RSS" href="/rss.xml" />
     
-    <title>{title}</title>
+    <title>{fullTitle}</title>
     
     <meta property="og:type" content="website" />
     <meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="맛집맵" />
     <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={fullTitle} />
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
     
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "맛집맵",
-      "alternateName": ["matjipmap", "거지맵", "거지맵 대체", "거지맵 대항마"],
+      "alternateName": ["matjipmap", "거지맵", "거지맵 대체", "거지맵 대항마", "로컬맛집", "찐맛집"],
       "url": siteUrl,
       "description": description,
-      "keywords": "맛집맵, 거지맵, 거지맵 사이트, 맛집추천, 맛집지도, 거지맵 대체서비스",
+      "keywords": "맛집맵, 거지맵, 거지맵 사이트, 맛집추천, 맛집지도, 거지맵 대체서비스, 로컬맛집, 찐맛집, 진짜맛집",
       "inLanguage": "ko-KR",
       "potentialAction": {
         "@type": "SearchAction",
         "target": `${siteUrl}/?search={search_term_string}`,
         "query-input": "required name=search_term_string"
-      }
+      },
+      "sameAs": [
+        "https://blog.naver.com/matjipmap",
+        "https://www.instagram.com/matjipmap"
+      ]
+    })} />
+    
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "맛집맵",
+      "url": siteUrl,
+      "logo": `${siteUrl}/favicon.svg`,
+      "description": "거지맵 대항마! 진짜 맛있는 한 끼를 위한 집단지성 맛집 지도",
+      "keywords": "맛집, 맛집추천, 맛집지도, 로컬맛집, 찐맛집",
+      "areaServed": {
+        "@type": "Country",
+        "name": "대한민국"
+      },
+      "availableLanguage": "Korean"
     })} />
   </head>
   <body class="bg-gray-50 min-h-screen">

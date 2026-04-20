@@ -11,6 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { place } = Astro.props;
+const siteUrl = 'https://matjipmap.com';
 
 const categoryLabels = {
   korean: '한식',
@@ -23,27 +24,116 @@ const categoryLabels = {
 };
 
 const category = categoryLabels[place.data.category];
+const categoryKeywords = {
+  korean: '한식맛집, 한국맛집, 찐한식',
+  japanese: '일식맛집, 초밥, 일본음식',
+  chinese: '중식맛집, 짜장면, 탕수육',
+  western: '양식맛집, 파스타, 피자',
+  bunsik: '분식맛집, 떡볶이, 김밥',
+  cafe: '카페, 디저트, 커피',
+  other: '맛집, 음식',
+};
 
-function getFoodImage(category: string, id: string, index: number = 0): string {
-  const categoryImages: { [key: string]: string } = {
-    korean: 'koreanfood',
-    japanese: 'sushi',
-    chinese: 'chinesefood',
-    western: 'pizza',
-    bunsik: 'ramen',
-    cafe: 'coffee',
-    other: 'food',
-  };
-  const keyword = categoryImages[category] || 'food';
-  const seed = parseInt(id.replace(/\D/g, '').slice(-4) || '1') + index;
-  return `https://loremflickr.com/600/400/${keyword}?lock=${seed}`;
+function isPlaceholderImage(url?: string): boolean {
+  if (!url) return true;
+  return url.includes('images.unsplash.com') || url.includes('loremflickr.com');
 }
 
-const mainImage = place.data.imageUrl || getFoodImage(place.data.category, place.id, 0);
-const galleryImages = [1, 2, 3].map((_, i) => getFoodImage(place.data.category, place.id, i + 1));
+const realPhotoUrls = [
+  place.data.imageUrl,
+  ...(place.data.reviews?.map((review: any) => review.imageUrl) ?? []),
+].filter((url, index, list): url is string => Boolean(url) && !isPlaceholderImage(url) && list.indexOf(url) === index);
+
+const mainImage = realPhotoUrls[0];
+const galleryImages = realPhotoUrls.slice(1, 4);
+
+const pageDescription = `${place.data.name} - ${place.data.address} 주변의 찐맛집! ${place.data.description || `${place.data.name}에서 직접 검증한 로컬 맛집입니다.`} 별점 ${place.data.rating?.toFixed(1) || '?'}/5. 맛집맵에서 확인하세요!`;
+const ogImageUrl = mainImage || '/og-image.png';
 ---
 
-<Layout title={`${place.data.name} - 맛집맵`}>
+<Layout 
+  title={`${place.data.name} - 맛집맵`}
+  description={pageDescription}
+  ogImage={ogImageUrl}
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": place.data.name,
+    "image": ogImageUrl,
+    "url": `${siteUrl}/place/${place.id}`,
+    "description": pageDescription,
+    "keywords": `${place.data.name}, ${categoryKeywords[place.data.category]}, 맛집맵, 거지맵 대체`,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": place.data.address,
+      "addressLocality": "부산",
+      "addressRegion": "경상남도",
+      "postalCode": "",
+      "addressCountry": "KR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": place.data.lat,
+      "longitude": place.data.lng
+    },
+    "aggregateRating": place.data.rating ? {
+      "@type": "AggregateRating",
+      "ratingValue": place.data.rating.toFixed(1),
+      "reviewCount": place.data.reviewCount || 0
+    } : undefined,
+    "servesCuisine": category,
+    "priceRange": "₩₩",
+    "openingHoursSpecification": [],
+    "menu": place.data.menus?.map((m: any) => ({
+      "@type": "MenuItem",
+      "name": m.name,
+      "price": m.price.toLocaleString()
+    })),
+    "review": place.data.reviews?.map((r: any) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": r.nickname
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": r.rating
+      },
+      "reviewBody": r.content,
+      "datePublished": r.date
+    })),
+    "isBasedOn": place.data.reporter ? {
+      "@type": "Person",
+      "name": place.data.reporter,
+      "description": "맛집맵 추천인"
+    } : undefined
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "홈",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "로컬 맛집",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": place.data.name,
+        "item": `${siteUrl}/place/${place.id}`
+      }
+    ]
+  })} />
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="/" class="text-xl font-bold text-orange-600 flex items-center gap-2">
@@ -63,26 +153,33 @@ const galleryImages = [1, 2, 3].map((_, i) => getFoodImage(place.data.category, 
       <div id="map" class="w-full h-64"></div>
       
       <div class="p-4">
-        <div class="grid grid-cols-4 gap-2">
-          <div class="col-span-2 row-span-2">
-            <img 
-              src={mainImage} 
-              alt={place.data.name}
-              class="w-full h-full object-cover rounded-lg"
-              loading="eager"
-            />
-          </div>
-          {galleryImages.map((img, i) => (
-            <div>
+        {mainImage ? (
+          <div class="grid grid-cols-4 gap-2">
+            <div class={galleryImages.length > 0 ? 'col-span-2 row-span-2' : 'col-span-4'}>
               <img 
-                src={img} 
-                alt={`${place.data.name} ${i + 2}`}
-                class="w-full h-full object-cover rounded-lg"
-                loading="lazy"
+                src={mainImage} 
+                alt={place.data.name}
+                class="w-full h-full max-h-[520px] object-cover rounded-lg"
+                loading="eager"
               />
             </div>
-          ))}
-        </div>
+            {galleryImages.map((img, i) => (
+              <div>
+                <img 
+                  src={img} 
+                  alt={`${place.data.name} ${i + 2}`}
+                  class="w-full h-full object-cover rounded-lg"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="rounded-xl border border-dashed border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50 px-6 py-12 text-center text-gray-600">
+            <p class="text-sm font-semibold text-orange-700">실제 매장 사진 준비 중</p>
+            <p class="mt-2 text-sm">지금은 임시 스톡 이미지를 숨겼습니다. 실제 사진이 등록되면 여기서 바로 노출됩니다.</p>
+          </div>
+        )}
       </div>
       
       <div class="p-6">
@@ -171,7 +268,7 @@ const galleryImages = [1, 2, 3].map((_, i) => getFoodImage(place.data.category, 
                       <span class={`text-lg ${i < review.rating ? 'text-yellow-500' : 'text-gray-300'}`}>★</span>
                     ))}
                   </div>
-                  {review.imageUrl && (
+                  {review.imageUrl && !isPlaceholderImage(review.imageUrl) && (
                     <div class="mb-2">
                       <img 
                         src={review.imageUrl} 

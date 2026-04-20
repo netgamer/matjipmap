@@ -87,6 +87,22 @@
     "imageUrl": {
       "type": "string"
     },
+    "imageSourcePage": {
+      "type": "string"
+    },
+    "imageSourceSite": {
+      "type": "string"
+    },
+    "imageCollectedAt": {
+      "type": "string"
+    },
+    "imageCollectionMode": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "manual"
+      ]
+    },
     "reviews": {
       "type": "array",
       "items": {

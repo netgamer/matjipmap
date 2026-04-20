@@ -25,6 +25,10 @@ const placesCollection = defineCollection({
     visitedAt: z.string().optional(),
     createdAt: z.string(),
     imageUrl: z.string().optional(),
+    imageSourcePage: z.string().optional(),
+    imageSourceSite: z.string().optional(),
+    imageCollectedAt: z.string().optional(),
+    imageCollectionMode: z.enum(['auto', 'manual']).optional(),
     reviews: z.array(z.object({
       userId: z.string(),
       nickname: z.string(),

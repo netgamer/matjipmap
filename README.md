@@ -55,6 +55,28 @@ description: "한 줄 소개"
 선택적 본문 내용...
 ```
 
+## 이미지 수집
+
+기존 168개 맛집 이미지를 빠르게 교체할 때:
+
+```bash
+npm run images:auto
+```
+
+- `imageUrl` 이 비어 있거나 `Unsplash` / `loremflickr` placeholder 인 항목만 대상으로 처리합니다.
+- Google 이미지 검색 결과의 상단 후보를 자동 저장합니다.
+- 저장 메타데이터: `imageSourcePage`, `imageSourceSite`, `imageCollectedAt`, `imageCollectionMode`
+
+신규 맛집을 수동으로 고를 때:
+
+```bash
+npm run images:manual -- --id=naver-001
+```
+
+- 브라우저가 열리면 원하는 사진을 클릭합니다.
+- 선택 즉시 해당 md 파일의 `imageUrl` 과 수집 메타데이터를 업데이트합니다.
+- 수동 모드는 GUI 브라우저를 띄우므로 로컬 환경에서 실행해야 합니다.
+
 ## Supabase 테이블 생성
 
 ```sql

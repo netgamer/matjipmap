@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "images:auto": "node scripts/collect-place-images.mjs --mode=auto --limit=168",
+    "images:manual": "node scripts/collect-place-images.mjs --mode=manual"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

@@ -26,19 +26,12 @@ const categoryLabels = {
   cafe: '카페',
 };
 
-function getFoodImage(category: string, id: string): string {
-  const categoryImages: { [key: string]: string } = {
-    korean: 'koreanfood',
-    japanese: 'sushi',
-    chinese: 'chinesefood',
-    western: 'pizza',
-    bunsik: 'ramen',
-    cafe: 'coffee',
-    other: 'food',
-  };
-  const keyword = categoryImages[category] || 'food';
-  const seed = id.replace(/\D/g, '').slice(-4) || '1';
-  return `https://loremflickr.com/400/300/${keyword}?lock=${seed}`;
+function getDisplayImage(url?: string): string | undefined {
+  if (!url) return undefined;
+  if (url.includes('images.unsplash.com') || url.includes('loremflickr.com')) {
+    return undefined;
+  }
+  return url;
 }
 ---
 
@@ -91,7 +84,7 @@ function getFoodImage(category: string, id: string): string {
       <div class="p-4 space-y-4" id="place-list">
         {places.map((place) => {
           const isEliminated = place.data.status === 'eliminated';
-          const imageUrl = place.data.imageUrl || getFoodImage(place.data.category, place.id);
+          const imageUrl = getDisplayImage(place.data.imageUrl);
           return (
           <a 
             href={`/place/${place.id}`} 
@@ -100,12 +93,18 @@ function getFoodImage(category: string, id: string): string {
           >
             <div class="flex">
               <div class="w-24 h-24 flex-shrink-0 bg-gray-100">
-                <img 
-                  src={imageUrl} 
-                  alt={place.data.name}
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
+                {imageUrl ? (
+                  <img 
+                    src={imageUrl} 
+                    alt={place.data.name}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-50 to-amber-100 text-[11px] text-center text-gray-500 px-2">
+                    실사진 준비 중
+                  </div>
+                )}
               </div>
               <div class="flex-1 p-3">
                 <div class="flex justify-between items-start mb-1">
