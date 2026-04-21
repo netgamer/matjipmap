@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://matjipmap.com/sitemap-index.xml
+Sitemap: https://xn--0z2byb398d.com/sitemap-index.xml
