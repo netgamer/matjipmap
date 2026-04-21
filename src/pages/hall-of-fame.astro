@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -68,23 +69,12 @@ const categoryLabels = {
 ---
 
 <Layout title={`${currentMonthName} 명예의 전당 - 맛집맵`}>
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-orange-600 flex items-center gap-2">
-        <span>🍽️</span>
-        맛집맵
-      </a>
-      <nav class="flex items-center gap-4">
-        <a href="/" class="text-gray-600 hover:text-orange-600">맛집 목록</a>
-        <a href="/hall-of-fame" class="text-orange-600 font-medium">명예의 전당</a>
-        <a href="/report" class="text-gray-600 hover:text-orange-600">제보하기</a>
-      </nav>
-    </div>
-  </header>
+  <div class="mm-shell">
+    <SiteHeader active="hall" />
 
-  <main class="max-w-4xl mx-auto px-4 py-6">
-    <div class="text-center mb-8">
-      <div class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-white px-6 py-3 rounded-full mb-4">
+  <main class="mm-container py-8 lg:py-12">
+    <div class="mb-8 text-center">
+      <div class="mb-4 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 px-6 py-3 text-white">
         <h1 class="text-2xl font-bold">{currentMonthName} 명예의 전당</h1>
       </div>
       <p class="text-gray-600">이번 달 가장 많은 사랑을 받은 찐 맛집을 확인하세요!</p>
@@ -99,9 +89,9 @@ const categoryLabels = {
         const crownText = currentRank === 1 ? '1위' : currentRank === 2 ? '2위' : currentRank === 3 ? '3위' : null;
         
         return (
-          <a 
+          <a
             href={`/place/${place.id}`} 
-            class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition block"
+            class="mm-card-soft block overflow-hidden rounded-2xl transition hover:border-orange-200 hover:shadow-md"
             data-place-id={place.id}
             data-current-rank={currentRank}
           >
@@ -166,7 +156,7 @@ const categoryLabels = {
       </div>
     )}
 
-    <div class="mt-8 bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6">
+    <div class="mt-8 rounded-2xl border border-orange-100 bg-gradient-to-r from-orange-50 to-red-50 p-6">
       <h2 class="font-bold text-gray-800 mb-4">순위 산정 기준</h2>
       <ul class="text-sm text-gray-600 space-y-2">
         <li>* <strong>리뷰 수 x 10점</strong> + <strong>별점 x 5점</strong> = 총 점수</li>
@@ -177,6 +167,7 @@ const categoryLabels = {
       </ul>
     </div>
   </main>
+  </div>
 </Layout>
 
 <script>

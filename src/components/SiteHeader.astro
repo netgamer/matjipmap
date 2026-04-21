@@ -1,0 +1,22 @@
+---
+interface Props {
+  active?: 'list' | 'hall' | 'register';
+}
+
+const { active = 'list' } = Astro.props;
+---
+
+<header class="mm-header">
+  <div class="mm-container mm-header-inner">
+    <a href="/" class="mm-brand">
+      <span class="mm-brand-mark" aria-hidden="true"></span>
+      <span>맛집맵</span>
+    </a>
+
+    <nav class="mm-nav">
+      <a href="/" data-active={active === 'list'}>맛집 목록</a>
+      <a href="/hall-of-fame" data-active={active === 'hall'}>명예의 전당</a>
+      <a href="/register" data-active={active === 'register'}>맛집 등록</a>
+    </nav>
+  </div>
+</header>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -56,6 +57,7 @@ const ogImageUrl = mainImage || '/og-image.png';
   description={pageDescription}
   ogImage={ogImageUrl}
 >
+  <div class="mm-shell">
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Restaurant",
@@ -134,22 +136,10 @@ const ogImageUrl = mainImage || '/og-image.png';
       }
     ]
   })} />
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold text-orange-600 flex items-center gap-2">
-        <span>🍽️</span>
-        맛집맵
-      </a>
-      <nav class="flex gap-4">
-        <a href="/" class="text-gray-600 hover:text-orange-600">맛집 목록</a>
-        <a href="/hall-of-fame" class="text-gray-600 hover:text-orange-600">명예의 전당</a>
-        <a href="/register" class="text-gray-600 hover:text-orange-600">맛집 등록</a>
-      </nav>
-    </div>
-  </header>
+  <SiteHeader active="list" />
 
-  <main class="max-w-4xl mx-auto px-4 py-6">
-    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+  <main class="mm-container py-8 lg:py-10">
+    <div class="mm-card overflow-hidden rounded-2xl">
       <div id="map" class="w-full h-64"></div>
       
       <div class="p-4">
@@ -327,6 +317,7 @@ const ogImageUrl = mainImage || '/og-image.png';
       </div>
     </div>
   </main>
+  </div>
 </Layout>
 
 <script define:vars={{ lat: place.data.lat, lng: place.data.lng }}>

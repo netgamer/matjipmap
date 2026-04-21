@@ -1,1 +1,180 @@
 @import "tailwindcss";
+
+:root {
+  --mm-bg: #f6f3ee;
+  --mm-surface: rgba(255, 255, 255, 0.82);
+  --mm-surface-strong: #ffffff;
+  --mm-line: rgba(15, 23, 42, 0.1);
+  --mm-line-strong: rgba(15, 23, 42, 0.18);
+  --mm-text: #0f172a;
+  --mm-muted: rgba(15, 23, 42, 0.62);
+  --mm-subtle: rgba(15, 23, 42, 0.42);
+  --mm-brand: #f97316;
+  --mm-brand-soft: rgba(249, 115, 22, 0.1);
+  --mm-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+}
+
+html {
+  background: radial-gradient(circle at top, rgba(249, 115, 22, 0.07), transparent 30%), var(--mm-bg);
+  color: var(--mm-text);
+}
+
+body {
+  color: var(--mm-text);
+  background: transparent;
+}
+
+@layer components {
+  .mm-shell {
+    @apply min-h-screen;
+    background:
+      radial-gradient(circle at top left, rgba(249, 115, 22, 0.08), transparent 24rem),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4)),
+      var(--mm-bg);
+  }
+
+  .mm-header {
+    @apply sticky top-0 z-50 border-b backdrop-blur;
+    border-color: var(--mm-line);
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .mm-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .mm-header-inner {
+    @apply flex items-center justify-between py-4;
+  }
+
+  .mm-brand {
+    @apply flex items-center gap-2 text-sm font-semibold tracking-[-0.02em];
+    color: var(--mm-text);
+  }
+
+  .mm-brand-mark {
+    @apply inline-flex h-3.5 w-3.5 rounded-full;
+    background: var(--mm-brand);
+    box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.14);
+  }
+
+  .mm-nav {
+    @apply flex items-center gap-5 text-sm;
+    color: var(--mm-muted);
+  }
+
+  .mm-nav a {
+    @apply transition;
+  }
+
+  .mm-nav a:hover {
+    color: var(--mm-text);
+  }
+
+  .mm-nav a[data-active="true"] {
+    color: var(--mm-text);
+    @apply font-medium;
+  }
+
+  .mm-page {
+    @apply pb-20;
+  }
+
+  .mm-page-intro {
+    @apply border-b py-12 lg:py-16;
+    border-color: var(--mm-line);
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .mm-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.28em];
+    color: var(--mm-brand);
+  }
+
+  .mm-title {
+    @apply mt-4 text-4xl font-semibold tracking-[-0.06em] sm:text-5xl lg:text-7xl;
+    color: var(--mm-text);
+    line-height: 0.92;
+  }
+
+  .mm-description {
+    @apply mt-4 max-w-2xl text-base leading-7 sm:text-lg;
+    color: var(--mm-muted);
+  }
+
+  .mm-badges {
+    @apply mt-8 flex flex-wrap gap-3;
+  }
+
+  .mm-badge {
+    @apply rounded-full border px-4 py-2 text-sm;
+    border-color: var(--mm-line);
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--mm-muted);
+  }
+
+  .mm-section {
+    @apply py-8 lg:py-10;
+  }
+
+  .mm-card {
+    @apply rounded-[1.75rem] border;
+    border-color: var(--mm-line);
+    background: var(--mm-surface);
+    box-shadow: var(--mm-shadow);
+  }
+
+  .mm-card-soft {
+    @apply rounded-[1.5rem] border;
+    border-color: var(--mm-line);
+    background: rgba(255, 255, 255, 0.64);
+  }
+
+  .mm-pill {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium;
+    background: var(--mm-brand-soft);
+    color: var(--mm-brand);
+  }
+
+  .mm-button {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition;
+    background: var(--mm-text);
+    color: white;
+  }
+
+  .mm-button:hover {
+    background: var(--mm-brand);
+  }
+
+  .mm-button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border bg-white px-4 py-2.5 text-sm font-medium transition;
+    border-color: var(--mm-line);
+    color: var(--mm-text);
+  }
+
+  .mm-button-secondary:hover {
+    border-color: var(--mm-line-strong);
+    background: rgba(15, 23, 42, 0.03);
+  }
+
+  .mm-field {
+    @apply w-full rounded-2xl border px-4 py-4 text-[15px] outline-none transition;
+    border-color: var(--mm-line);
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--mm-text);
+  }
+
+  .mm-field::placeholder {
+    color: rgba(15, 23, 42, 0.3);
+  }
+
+  .mm-field:focus {
+    border-color: rgba(249, 115, 22, 0.5);
+    background: white;
+  }
+
+  .mm-label {
+    @apply text-xs font-medium uppercase tracking-[0.2em];
+    color: var(--mm-subtle);
+  }
+}
