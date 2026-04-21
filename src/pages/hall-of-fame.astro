@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { getCollection } from 'astro:content';
+import { dedupePlaces } from '../lib/place-utils';
 
 type RankedPlace = {
   id: string;
@@ -17,7 +18,8 @@ type RankedPlace = {
   rankChange: number | null;
 };
 
-const places = await getCollection('places');
+const rawPlaces = await getCollection('places');
+const places = dedupePlaces(rawPlaces);
 
 const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
 const categoryLabels: Record<string, string> = {

@@ -3,8 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import Map from '../components/Map.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { getCollection } from 'astro:content';
+import { dedupePlaces, getDisplayImageUrl } from '../lib/place-utils';
 
-const places = await getCollection('places');
+const rawPlaces = await getCollection('places');
+const places = dedupePlaces(rawPlaces);
 
 const categories = ['all', 'korean', 'japanese', 'chinese', 'western', 'bunsik', 'cafe'] as const;
 const categoryCounts = {
@@ -27,13 +29,6 @@ const categoryLabels = {
   cafe: '카페',
 };
 
-function getDisplayImage(url?: string): string | undefined {
-  if (!url) return undefined;
-  if (url.includes('images.unsplash.com') || url.includes('loremflickr.com')) {
-    return undefined;
-  }
-  return url;
-}
 ---
 
 <Layout
@@ -93,7 +88,7 @@ function getDisplayImage(url?: string): string | undefined {
       <div class="space-y-4 p-4" id="place-list">
         {places.map((place) => {
           const isEliminated = place.data.status === 'eliminated';
-          const imageUrl = getDisplayImage(place.data.imageUrl);
+          const imageUrl = getDisplayImageUrl(place.data.imageUrl);
 
           return (
             <a
@@ -106,14 +101,21 @@ function getDisplayImage(url?: string): string | undefined {
               data-category={place.data.category}
             >
               <div class="flex">
-                <div class="h-28 w-28 flex-shrink-0 bg-gray-100">
+                <div class="relative h-28 w-28 flex-shrink-0 bg-gray-100">
                   {imageUrl ? (
-                    <img
-                      src={imageUrl}
-                      alt={place.data.name}
-                      class="h-full w-full object-cover"
-                      loading="lazy"
-                    />
+                    <>
+                      <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-orange-50 to-amber-100 px-3 text-center text-[11px] text-gray-500">
+                        ?ъ쭊 以鍮?以?
+                      </div>
+                      <img
+                        src={imageUrl}
+                        alt={place.data.name}
+                        class="relative z-10 h-full w-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.style.display='none'"
+                      />
+                    </>
                   ) : (
                     <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-orange-50 to-amber-100 px-3 text-center text-[11px] text-gray-500">
                       사진 준비 중

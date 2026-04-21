@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { getCollection } from 'astro:content';
+import { getDisplayImageUrl } from '../../lib/place-utils';
 
 export async function getStaticPaths() {
   const places = await getCollection('places');
@@ -36,14 +37,15 @@ const categoryKeywords = {
 };
 
 function isPlaceholderImage(url?: string): boolean {
-  if (!url) return true;
-  return url.includes('images.unsplash.com') || url.includes('loremflickr.com');
+  return !getDisplayImageUrl(url);
 }
 
 const realPhotoUrls = [
   place.data.imageUrl,
   ...(place.data.reviews?.map((review: any) => review.imageUrl) ?? []),
-].filter((url, index, list): url is string => Boolean(url) && !isPlaceholderImage(url) && list.indexOf(url) === index);
+]
+  .map((url) => getDisplayImageUrl(url))
+  .filter((url, index, list): url is string => Boolean(url) && list.indexOf(url) === index);
 
 const mainImage = realPhotoUrls[0];
 const galleryImages = realPhotoUrls.slice(1, 4);
@@ -151,6 +153,8 @@ const ogImageUrl = mainImage || '/og-image.png';
                 alt={place.data.name}
                 class="w-full h-full max-h-[520px] object-cover rounded-lg"
                 loading="eager"
+                decoding="async"
+                onerror="this.style.display='none'"
               />
             </div>
             {galleryImages.map((img, i) => (
@@ -160,6 +164,8 @@ const ogImageUrl = mainImage || '/og-image.png';
                   alt={`${place.data.name} ${i + 2}`}
                   class="w-full h-full object-cover rounded-lg"
                   loading="lazy"
+                  decoding="async"
+                  onerror="this.parentElement.style.display='none'"
                 />
               </div>
             ))}
@@ -260,11 +266,13 @@ const ogImageUrl = mainImage || '/og-image.png';
                   </div>
                   {review.imageUrl && !isPlaceholderImage(review.imageUrl) && (
                     <div class="mb-2">
-                      <img 
-                        src={review.imageUrl} 
+                      <img
+                        src={getDisplayImageUrl(review.imageUrl)}
                         alt="리뷰 사진"
                         class="w-32 h-32 object-cover rounded-lg"
                         loading="lazy"
+                        decoding="async"
+                        onerror="this.parentElement.style.display='none'"
                       />
                     </div>
                   )}

@@ -4,6 +4,18 @@ import puppeteer from 'puppeteer';
 
 const PLACES_DIR = path.resolve('src/content/places');
 const PLACEHOLDER_HOSTS = ['images.unsplash.com', 'loremflickr.com'];
+const INVALID_IMAGE_PATTERNS = [
+  ...PLACEHOLDER_HOSTS,
+  '/undefined',
+  'www.menupan.com/restaurant/restimg',
+  'www.localview.co.kr/cp/thumbnail',
+  'img.siksinhot.com/place',
+  'img.restaurantguru.com',
+  'pickup-menu.co.kr/wp-content/uploads',
+  'img.kr.gcp-karroter.net',
+  'image.neoflat.net',
+  'thumb.store114.net',
+];
 const SEARCH_ENGINES = [
   {
     id: 'bing-images',
@@ -18,6 +30,13 @@ const SEARCH_ENGINES = [
     },
   },
 ];
+
+function shouldRejectImageUrl(url) {
+  return !url
+    || !url.startsWith('http')
+    || url.startsWith('http://')
+    || INVALID_IMAGE_PATTERNS.some((pattern) => url.includes(pattern));
+}
 
 function decodeHtmlEntities(text) {
   return text
@@ -39,8 +58,7 @@ function extractBingCandidatesFromHtml(html) {
   for (const pattern of patterns) {
     for (const match of decoded.matchAll(pattern)) {
       const url = match[1];
-      if (!url) continue;
-      if (PLACEHOLDER_HOSTS.some((host) => url.includes(host))) continue;
+      if (shouldRejectImageUrl(url)) continue;
       if (!urls.includes(url)) {
         urls.push(url);
       }
@@ -91,7 +109,9 @@ function getField(frontmatter, key) {
 }
 
 function isRealImage(url) {
-  return Boolean(url) && !PLACEHOLDER_HOSTS.some((host) => url.includes(host));
+  return Boolean(url)
+    && !url.startsWith('http://')
+    && !INVALID_IMAGE_PATTERNS.some((pattern) => url.includes(pattern));
 }
 
 function updateFrontmatter(content, updates) {
@@ -232,7 +252,7 @@ async function collectCandidates(page, query) {
 }
 
 function chooseAutoCandidate(candidates) {
-  return candidates[0];
+  return candidates.find((candidate) => !shouldRejectImageUrl(candidate.src));
 }
 
 function getPlaceRecords(args) {
