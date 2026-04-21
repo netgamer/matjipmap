@@ -1,0 +1,30 @@
+name: Hall Of Fame Monthly Rollover
+
+on:
+  schedule:
+    # KST 00:05 on the 1st day of every month
+    - cron: "5 15 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rollover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update rollover marker
+        run: |
+          mkdir -p public
+          echo "last_rollover_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" > public/hall-of-fame-rollover.txt
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/hall-of-fame-rollover.txt
+          git commit -m "chore: monthly hall-of-fame rollover" || exit 0
+          git push
