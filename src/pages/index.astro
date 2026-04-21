@@ -73,19 +73,15 @@ const categoryLabels = {
     </div>
   </div>
 
-  <main class="flex flex-col lg:flex-row" style="height: calc(100vh - 240px);">
-    <div class="relative h-[50vh] w-full lg:h-full lg:flex-1">
-      <Map places={places} />
-    </div>
-
-    <aside class="w-full overflow-y-auto border-t border-gray-200 bg-white lg:h-full lg:w-[28rem] lg:border-l lg:border-t-0">
-      <div class="sticky top-0 border-b border-gray-200 bg-white px-5 py-4">
+  <main class="mx-auto max-w-[1600px] px-4 py-6 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-6 lg:py-8">
+    <aside class="order-2 w-full bg-white lg:order-1">
+      <div class="border-b border-gray-200 bg-white px-1 pb-4">
         <h2 class="text-base font-semibold text-gray-950">등록된 맛집</h2>
         <p class="mt-1 text-sm text-gray-500" id="place-count">
           {places.length}곳
         </p>
       </div>
-      <div class="space-y-4 p-4" id="place-list">
+      <div class="space-y-4 pt-4" id="place-list">
         {places.map((place) => {
           const isEliminated = place.data.status === 'eliminated';
           const imageUrl = getDisplayImageUrl(place.data.imageUrl);
@@ -169,6 +165,14 @@ const categoryLabels = {
         })}
       </div>
     </aside>
+
+    <div class="order-1 w-full lg:order-2">
+      <div class="border border-gray-200 bg-white lg:sticky lg:top-[7.5rem] lg:h-[calc(100vh-9rem)]">
+        <div class="relative h-[48vh] min-h-[420px] w-full lg:h-full">
+          <Map places={places} />
+        </div>
+      </div>
+    </div>
   </main>
   </div>
 </Layout>
