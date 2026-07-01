@@ -1,1 +1,1 @@
-last_rollover_utc=2026-06-01T16:58:46Z
+last_rollover_utc=2026-07-01T15:56:58Z
